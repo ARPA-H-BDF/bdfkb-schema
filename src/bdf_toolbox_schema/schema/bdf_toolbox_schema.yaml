@@ -37,13 +37,8 @@ classes:
     description: >-
       Represents a Tool
     slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
-    slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
+      - developer_team
+      - technical_area
 
   ToolCollection:
     tree_root: true
@@ -67,30 +62,52 @@ slots:
   description:
     slot_uri: schema:description
     description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
+  developer_team:
+    range: BDFPerformerTeam
+    description: BDF performer team
+  technical_area:
+    range: BDFTechnicalArea
+    description: BDF Technical Area
 
 enums:
-  PersonStatus:
+  BDFPerformerTeam:
     permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+      ASKEM_NEU:
+        description: ASKEM - NEU
+      ASKEM_MIT:
+        description: ASKEM - MIT
+      ASKEM_NYU:
+        description: ASKEM - NYU
+      ASKEM_Jataware:
+        description: ASKEM - Jataware
+      Netrias:
+        description: Netrias
+      N3C:
+        description: N3C
+      BDC:
+        description: BDC
+      CRA:
+        description: CRA
+      DNAHIVE:
+        description: DNAHIVE
+      HMS:
+        description: HMS
+      Stanford:
+        description: Stanford
+      UAB:
+        description: UAB
+      ICF:
+        description: ICF
+      SageBio:
+        description: SageBio
+      Insilicom:
+        description: Insilicom
+      
+  BDFTechnicalArea:
+    permissible_values:
+      TA1:
+        description: BDF Technical Area 1
+      TA2:
+        description: BDF Technical Area 2
+      TA3:
+        description: BDF Technical Area 3

@@ -1,4 +1,3 @@
-@prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix bdf_toolbox_schema: <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
@@ -13,10 +12,10 @@ bdf_toolbox_schema:ToolCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ToolCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom bdf_toolbox_schema:Tool ;
             owl:onProperty bdf_toolbox_schema:entries ],
         [ a owl:Restriction ;
-            owl:allValuesFrom bdf_toolbox_schema:Tool ;
+            owl:minCardinality 0 ;
             owl:onProperty bdf_toolbox_schema:entries ] ;
     skos:definition "A holder for Tool objects" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
@@ -28,29 +27,29 @@ bdf_toolbox_schema:NamedThing a owl:Class,
             owl:maxCardinality 1 ;
             owl:onProperty bdf_toolbox_schema:id ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bdf_toolbox_schema:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty bdf_toolbox_schema:name ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bdf_toolbox_schema:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty bdf_toolbox_schema:name ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bdf_toolbox_schema:id ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
+            owl:maxCardinality 1 ;
             owl:onProperty bdf_toolbox_schema:name ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom linkml:String ;
             owl:onProperty bdf_toolbox_schema:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty bdf_toolbox_schema:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty bdf_toolbox_schema:description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bdf_toolbox_schema:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bdf_toolbox_schema:name ] ;
+            owl:onProperty bdf_toolbox_schema:id ] ;
     skos:definition "A generic grouping for any identifiable entity" ;
     skos:exactMatch schema1:Thing ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
@@ -59,85 +58,133 @@ bdf_toolbox_schema:Tool a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Tool" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bdf_toolbox_schema:vital_status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^\\S+@[\\S+\\.]+\\S+" ] ) ] ;
-            owl:onProperty bdf_toolbox_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom bdf_toolbox_schema:PersonStatus ;
-            owl:onProperty bdf_toolbox_schema:vital_status ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bdf_toolbox_schema:birth_date ],
+            owl:onProperty bdf_toolbox_schema:technical_area ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty bdf_toolbox_schema:primary_email ],
+            owl:onProperty bdf_toolbox_schema:developer_team ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty bdf_toolbox_schema:age_in_years ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Integer ;
-            owl:onProperty bdf_toolbox_schema:age_in_years ],
+            owl:onProperty bdf_toolbox_schema:technical_area ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bdf_toolbox_schema:vital_status ],
+            owl:onProperty bdf_toolbox_schema:developer_team ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty bdf_toolbox_schema:birth_date ],
+            owl:allValuesFrom bdf_toolbox_schema:BDFPerformerTeam ;
+            owl:onProperty bdf_toolbox_schema:developer_team ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bdf_toolbox_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Date ;
-            owl:onProperty bdf_toolbox_schema:birth_date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bdf_toolbox_schema:age_in_years ],
+            owl:allValuesFrom bdf_toolbox_schema:BDFTechnicalArea ;
+            owl:onProperty bdf_toolbox_schema:technical_area ],
         bdf_toolbox_schema:NamedThing ;
     skos:definition "Represents a Tool" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
 
-PATO:0001421 a owl:Class,
-        bdf_toolbox_schema:PersonStatus ;
-    rdfs:label "ALIVE" ;
-    rdfs:subClassOf bdf_toolbox_schema:PersonStatus .
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_Jataware> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "ASKEM_Jataware" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
 
-PATO:0001422 a owl:Class,
-        bdf_toolbox_schema:PersonStatus ;
-    rdfs:label "DEAD" ;
-    rdfs:subClassOf bdf_toolbox_schema:PersonStatus .
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_MIT> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "ASKEM_MIT" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
 
-<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/PersonStatus#UNKNOWN> a owl:Class,
-        bdf_toolbox_schema:PersonStatus ;
-    rdfs:label "UNKNOWN" ;
-    rdfs:subClassOf bdf_toolbox_schema:PersonStatus .
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NEU> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "ASKEM_NEU" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NYU> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "ASKEM_NYU" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#BDC> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "BDC" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#CRA> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "CRA" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#DNAHIVE> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "DNAHIVE" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#HMS> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "HMS" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ICF> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "ICF" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Insilicom> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "Insilicom" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#N3C> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "N3C" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Netrias> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "Netrias" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#SageBio> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "SageBio" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Stanford> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "Stanford" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#UAB> a owl:Class,
+        bdf_toolbox_schema:BDFPerformerTeam ;
+    rdfs:label "UAB" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFPerformerTeam .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA1> a owl:Class,
+        bdf_toolbox_schema:BDFTechnicalArea ;
+    rdfs:label "TA1" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFTechnicalArea .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA2> a owl:Class,
+        bdf_toolbox_schema:BDFTechnicalArea ;
+    rdfs:label "TA2" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFTechnicalArea .
+
+<https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> a owl:Class,
+        bdf_toolbox_schema:BDFTechnicalArea ;
+    rdfs:label "TA3" ;
+    rdfs:subClassOf bdf_toolbox_schema:BDFTechnicalArea .
 
 bdf_toolbox_schema:entries a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "entries" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
 
-bdf_toolbox_schema:age_in_years a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "age_in_years" ;
-    rdfs:range linkml:Integer ;
-    skos:definition "Number of years since birth" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
-
-bdf_toolbox_schema:birth_date a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "birth_date" ;
-    rdfs:range linkml:Date ;
-    skos:definition "Date on which a person is born" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
-
 bdf_toolbox_schema:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "description" ;
     skos:definition "A human-readable description for a thing" ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
+
+bdf_toolbox_schema:developer_team a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "developer_team" ;
+    rdfs:range bdf_toolbox_schema:BDFPerformerTeam ;
+    skos:definition "BDF performer team" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
 
 bdf_toolbox_schema:id a owl:ObjectProperty,
@@ -153,25 +200,19 @@ bdf_toolbox_schema:name a owl:ObjectProperty,
     skos:definition "A human-readable name for a thing" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
 
-bdf_toolbox_schema:primary_email a owl:ObjectProperty,
+bdf_toolbox_schema:technical_area a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "primary_email" ;
-    skos:definition "The main email address of a person" ;
+    rdfs:label "technical_area" ;
+    rdfs:range bdf_toolbox_schema:BDFTechnicalArea ;
+    skos:definition "BDF Technical Area" ;
     skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
 
-bdf_toolbox_schema:vital_status a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "vital_status" ;
-    rdfs:range bdf_toolbox_schema:PersonStatus ;
-    skos:definition "living or dead status" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> .
-
-bdf_toolbox_schema:PersonStatus a owl:Class,
+bdf_toolbox_schema:BDFTechnicalArea a owl:Class,
         linkml:EnumDefinition ;
-    owl:unionOf ( PATO:0001421 PATO:0001422 <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/PersonStatus#UNKNOWN> ) ;
-    linkml:permissible_values PATO:0001421,
-        PATO:0001422,
-        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/PersonStatus#UNKNOWN> .
+    owl:unionOf ( <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA1> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA2> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> ) ;
+    linkml:permissible_values <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA1>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA2>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> .
 
 <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema> a owl:Ontology ;
     rdfs:label "bdf-toolbox-schema" ;
@@ -179,4 +220,23 @@ bdf_toolbox_schema:PersonStatus a owl:Class,
     dcterms:title "bdf-toolbox-schema" ;
     rdfs:seeAlso <https://ARPA-H-BDF.github.io/bdf-toolbox-schema> ;
     skos:definition "Schema to describe BDF Toolbox entities and the relationships between them." .
+
+bdf_toolbox_schema:BDFPerformerTeam a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NEU> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_MIT> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NYU> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_Jataware> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Netrias> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#N3C> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#BDC> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#CRA> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#DNAHIVE> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#HMS> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Stanford> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#UAB> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ICF> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#SageBio> <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Insilicom> ) ;
+    linkml:permissible_values <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_Jataware>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_MIT>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NEU>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NYU>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#BDC>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#CRA>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#DNAHIVE>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#HMS>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ICF>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Insilicom>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#N3C>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Netrias>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#SageBio>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Stanford>,
+        <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#UAB> .
 

@@ -1,5 +1,5 @@
 # Auto generated from bdf_toolbox_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-16T21:11:16
+# Generation date: 2024-10-16T21:40:15
 # Schema: bdf-toolbox-schema
 #
 # id: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema
@@ -22,8 +22,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Date, Integer, String, Uriorcurie
-from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDate
+from linkml_runtime.linkml_model.types import String, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URIorCURIE
 
 metamodel_version = "1.7.0"
 version = None
@@ -96,10 +96,8 @@ class Tool(NamedThing):
     class_model_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA.Tool
 
     id: Union[str, ToolId] = None
-    primary_email: Optional[str] = None
-    birth_date: Optional[Union[str, XSDDate]] = None
-    age_in_years: Optional[int] = None
-    vital_status: Optional[Union[str, "PersonStatus"]] = None
+    developer_team: Optional[Union[str, "BDFPerformerTeam"]] = None
+    technical_area: Optional[Union[str, "BDFTechnicalArea"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -107,17 +105,11 @@ class Tool(NamedThing):
         if not isinstance(self.id, ToolId):
             self.id = ToolId(self.id)
 
-        if self.primary_email is not None and not isinstance(self.primary_email, str):
-            self.primary_email = str(self.primary_email)
+        if self.developer_team is not None and not isinstance(self.developer_team, BDFPerformerTeam):
+            self.developer_team = BDFPerformerTeam(self.developer_team)
 
-        if self.birth_date is not None and not isinstance(self.birth_date, XSDDate):
-            self.birth_date = XSDDate(self.birth_date)
-
-        if self.age_in_years is not None and not isinstance(self.age_in_years, int):
-            self.age_in_years = int(self.age_in_years)
-
-        if self.vital_status is not None and not isinstance(self.vital_status, PersonStatus):
-            self.vital_status = PersonStatus(self.vital_status)
+        if self.technical_area is not None and not isinstance(self.technical_area, BDFTechnicalArea):
+            self.technical_area = BDFTechnicalArea(self.technical_area)
 
         super().__post_init__(**kwargs)
 
@@ -143,22 +135,72 @@ class ToolCollection(YAMLRoot):
 
 
 # Enumerations
-class PersonStatus(EnumDefinitionImpl):
+class BDFPerformerTeam(EnumDefinitionImpl):
 
-    ALIVE = PermissibleValue(
-        text="ALIVE",
-        description="the person is living",
-        meaning=PATO["0001421"])
-    DEAD = PermissibleValue(
-        text="DEAD",
-        description="the person is deceased",
-        meaning=PATO["0001422"])
-    UNKNOWN = PermissibleValue(
-        text="UNKNOWN",
-        description="the vital status is not known")
+    ASKEM_NEU = PermissibleValue(
+        text="ASKEM_NEU",
+        description="ASKEM - NEU")
+    ASKEM_MIT = PermissibleValue(
+        text="ASKEM_MIT",
+        description="ASKEM - MIT")
+    ASKEM_NYU = PermissibleValue(
+        text="ASKEM_NYU",
+        description="ASKEM - NYU")
+    ASKEM_Jataware = PermissibleValue(
+        text="ASKEM_Jataware",
+        description="ASKEM - Jataware")
+    Netrias = PermissibleValue(
+        text="Netrias",
+        description="Netrias")
+    N3C = PermissibleValue(
+        text="N3C",
+        description="N3C")
+    BDC = PermissibleValue(
+        text="BDC",
+        description="BDC")
+    CRA = PermissibleValue(
+        text="CRA",
+        description="CRA")
+    DNAHIVE = PermissibleValue(
+        text="DNAHIVE",
+        description="DNAHIVE")
+    HMS = PermissibleValue(
+        text="HMS",
+        description="HMS")
+    Stanford = PermissibleValue(
+        text="Stanford",
+        description="Stanford")
+    UAB = PermissibleValue(
+        text="UAB",
+        description="UAB")
+    ICF = PermissibleValue(
+        text="ICF",
+        description="ICF")
+    SageBio = PermissibleValue(
+        text="SageBio",
+        description="SageBio")
+    Insilicom = PermissibleValue(
+        text="Insilicom",
+        description="Insilicom")
 
     _defn = EnumDefinition(
-        name="PersonStatus",
+        name="BDFPerformerTeam",
+    )
+
+class BDFTechnicalArea(EnumDefinitionImpl):
+
+    TA1 = PermissibleValue(
+        text="TA1",
+        description="BDF Technical Area 1")
+    TA2 = PermissibleValue(
+        text="TA2",
+        description="BDF Technical Area 2")
+    TA3 = PermissibleValue(
+        text="TA3",
+        description="BDF Technical Area 3")
+
+    _defn = EnumDefinition(
+        name="BDFTechnicalArea",
     )
 
 # Slots
@@ -174,21 +216,11 @@ slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
 slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
                    model_uri=BDF_TOOLBOX_SCHEMA.description, domain=None, range=Optional[str])
 
-slots.primary_email = Slot(uri=SCHEMA.email, name="primary_email", curie=SCHEMA.curie('email'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.primary_email, domain=None, range=Optional[str])
+slots.developer_team = Slot(uri=BDF_TOOLBOX_SCHEMA.developer_team, name="developer_team", curie=BDF_TOOLBOX_SCHEMA.curie('developer_team'),
+                   model_uri=BDF_TOOLBOX_SCHEMA.developer_team, domain=None, range=Optional[Union[str, "BDFPerformerTeam"]])
 
-slots.birth_date = Slot(uri=SCHEMA.birthDate, name="birth_date", curie=SCHEMA.curie('birthDate'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.birth_date, domain=None, range=Optional[Union[str, XSDDate]])
-
-slots.age_in_years = Slot(uri=BDF_TOOLBOX_SCHEMA.age_in_years, name="age_in_years", curie=BDF_TOOLBOX_SCHEMA.curie('age_in_years'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.age_in_years, domain=None, range=Optional[int])
-
-slots.vital_status = Slot(uri=BDF_TOOLBOX_SCHEMA.vital_status, name="vital_status", curie=BDF_TOOLBOX_SCHEMA.curie('vital_status'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.vital_status, domain=None, range=Optional[Union[str, "PersonStatus"]])
+slots.technical_area = Slot(uri=BDF_TOOLBOX_SCHEMA.technical_area, name="technical_area", curie=BDF_TOOLBOX_SCHEMA.curie('technical_area'),
+                   model_uri=BDF_TOOLBOX_SCHEMA.technical_area, domain=None, range=Optional[Union[str, "BDFTechnicalArea"]])
 
 slots.toolCollection__entries = Slot(uri=BDF_TOOLBOX_SCHEMA.entries, name="toolCollection__entries", curie=BDF_TOOLBOX_SCHEMA.curie('entries'),
                    model_uri=BDF_TOOLBOX_SCHEMA.toolCollection__entries, domain=None, range=Optional[Union[Dict[Union[str, ToolId], Union[dict, Tool]], List[Union[dict, Tool]]]])
-
-slots.Tool_primary_email = Slot(uri=SCHEMA.email, name="Tool_primary_email", curie=SCHEMA.curie('email'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.Tool_primary_email, domain=Tool, range=Optional[str],
-                   pattern=re.compile(r'^\S+@[\S+\.]+\S+'))

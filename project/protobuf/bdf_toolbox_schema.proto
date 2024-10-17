@@ -14,10 +14,8 @@ message Tool
   uriorcurie id = 0
   string name = 0
   string description = 0
-  string primaryEmail = 0
-  date birthDate = 0
-  integer ageInYears = 0
-  personStatus vitalStatus = 0
+  bDFPerformerTeam developerTeam = 0
+  bDFTechnicalArea technicalArea = 0
  }
 // A holder for Tool objects
 message ToolCollection

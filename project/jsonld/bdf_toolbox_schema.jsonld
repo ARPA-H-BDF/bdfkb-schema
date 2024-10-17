@@ -350,26 +350,88 @@
   ],
   "enums": [
     {
-      "name": "PersonStatus",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/PersonStatus",
+      "name": "BDFPerformerTeam",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam",
       "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
       "permissible_values": [
         {
-          "text": "ALIVE",
-          "description": "the person is living",
-          "meaning": "PATO:0001421"
+          "text": "ASKEM_NEU",
+          "description": "ASKEM - NEU"
         },
         {
-          "text": "DEAD",
-          "description": "the person is deceased",
-          "meaning": "PATO:0001422"
+          "text": "ASKEM_MIT",
+          "description": "ASKEM - MIT"
         },
         {
-          "text": "UNKNOWN",
-          "description": "the vital status is not known",
-          "todos": [
-            "map this to an ontology"
-          ]
+          "text": "ASKEM_NYU",
+          "description": "ASKEM - NYU"
+        },
+        {
+          "text": "ASKEM_Jataware",
+          "description": "ASKEM - Jataware"
+        },
+        {
+          "text": "Netrias",
+          "description": "Netrias"
+        },
+        {
+          "text": "N3C",
+          "description": "N3C"
+        },
+        {
+          "text": "BDC",
+          "description": "BDC"
+        },
+        {
+          "text": "CRA",
+          "description": "CRA"
+        },
+        {
+          "text": "DNAHIVE",
+          "description": "DNAHIVE"
+        },
+        {
+          "text": "HMS",
+          "description": "HMS"
+        },
+        {
+          "text": "Stanford",
+          "description": "Stanford"
+        },
+        {
+          "text": "UAB",
+          "description": "UAB"
+        },
+        {
+          "text": "ICF",
+          "description": "ICF"
+        },
+        {
+          "text": "SageBio",
+          "description": "SageBio"
+        },
+        {
+          "text": "Insilicom",
+          "description": "Insilicom"
+        }
+      ]
+    },
+    {
+      "name": "BDFTechnicalArea",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "permissible_values": [
+        {
+          "text": "TA1",
+          "description": "BDF Technical Area 1"
+        },
+        {
+          "text": "TA2",
+          "description": "BDF Technical Area 2"
+        },
+        {
+          "text": "TA3",
+          "description": "BDF Technical Area 3"
         }
       ]
     }
@@ -426,61 +488,29 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "primary_email",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/primary_email",
-      "description": "The main email address of a person",
+      "name": "developer_team",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/developer_team",
+      "description": "BDF performer team",
       "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "slot_uri": "http://schema.org/email",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/developer_team",
       "owner": "Tool",
       "domain_of": [
         "Tool"
       ],
-      "range": "string",
+      "range": "BDFPerformerTeam",
       "@type": "SlotDefinition"
     },
     {
-      "name": "birth_date",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/birth_date",
-      "description": "Date on which a person is born",
+      "name": "technical_area",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/technical_area",
+      "description": "BDF Technical Area",
       "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "mappings": [
-        "http://schema.org/birthDate"
-      ],
-      "slot_uri": "http://schema.org/birthDate",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/technical_area",
       "owner": "Tool",
       "domain_of": [
         "Tool"
       ],
-      "range": "date",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "age_in_years",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/age_in_years",
-      "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/age_in_years",
-      "owner": "Tool",
-      "domain_of": [
-        "Tool"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "vital_status",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/vital_status",
-      "description": "living or dead status",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/vital_status",
-      "owner": "Tool",
-      "domain_of": [
-        "Tool"
-      ],
-      "range": "PersonStatus",
+      "range": "BDFTechnicalArea",
       "@type": "SlotDefinition"
     },
     {
@@ -495,28 +525,6 @@
       "range": "Tool",
       "multivalued": true,
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Tool_primary_email",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "is_a": "primary_email",
-      "domain": "Tool",
-      "slot_uri": "http://schema.org/email",
-      "alias": "primary_email",
-      "owner": "Tool",
-      "domain_of": [
-        "Tool"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "primary_email",
-      "range": "string",
-      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     }
   ],
@@ -548,10 +556,8 @@
         "id",
         "name",
         "description",
-        "Tool_primary_email",
-        "birth_date",
-        "age_in_years",
-        "vital_status"
+        "developer_team",
+        "technical_area"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/Tool",
@@ -582,9 +588,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bdf_toolbox_schema.yaml",
-  "source_file_date": "2024-10-16T16:14:08",
-  "source_file_size": 2287,
-  "generation_date": "2024-10-16T21:11:16",
+  "source_file_date": "2024-10-16T21:31:58",
+  "source_file_size": 2551,
+  "generation_date": "2024-10-16T21:40:15",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/bdf_toolbox_schema.context.jsonld",

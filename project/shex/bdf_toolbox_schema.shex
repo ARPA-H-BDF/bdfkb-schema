@@ -57,11 +57,24 @@ linkml:Sparqlpath xsd:string
 <Tool> CLOSED {
     (  $<Tool_tes> (  &<NamedThing_tes> ;
           rdf:type [ schema1:Thing ] ? ;
-          schema1:email @linkml:String ? ;
-          schema1:birthDate @linkml:Date ? ;
-          <age_in_years> @linkml:Integer ? ;
-          <vital_status> [ <http://purl.obolibrary.org/obo/PATO_0001421> <http://purl.obolibrary.org/obo/PATO_0001422>
-             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/PersonStatus#UNKNOWN> ] ?
+          <developer_team> [ <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NEU>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_MIT>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_NYU>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ASKEM_Jataware>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Netrias>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#N3C>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#BDC>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#CRA>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#DNAHIVE>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#HMS>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Stanford>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#UAB>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#ICF>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#SageBio>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Insilicom> ] ? ;
+          <technical_area> [ <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA1>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA2>
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> ] ?
        ) ;
        rdf:type [ <Tool> ]
     )

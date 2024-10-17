@@ -3,10 +3,8 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 -- # Class: "Tool" Description: "Represents a Tool"
---     * Slot: primary_email Description: The main email address of a person
---     * Slot: birth_date Description: Date on which a person is born
---     * Slot: age_in_years Description: Number of years since birth
---     * Slot: vital_status Description: living or dead status
+--     * Slot: developer_team Description: BDF performer team
+--     * Slot: technical_area Description: BDF Technical Area
 --     * Slot: id Description: A unique identifier for a thing
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -25,10 +23,8 @@ CREATE TABLE "ToolCollection" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Tool" (
-	primary_email TEXT, 
-	birth_date DATE, 
-	age_in_years INTEGER, 
-	vital_status VARCHAR(7), 
+	developer_team VARCHAR(14), 
+	technical_area VARCHAR(3), 
 	id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
