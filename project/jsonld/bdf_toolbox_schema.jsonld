@@ -12,7 +12,7 @@
   "license": "Apache Software License 2.0",
   "prefixes": [
     {
-      "prefix_prefix": "bdf_toolbox_schema",
+      "prefix_prefix": "BDFT",
       "prefix_reference": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/"
     },
     {
@@ -36,7 +36,7 @@
       "prefix_reference": "https://example.org/"
     }
   ],
-  "default_prefix": "bdf_toolbox_schema",
+  "default_prefix": "BDFT",
   "default_range": "string",
   "types": [
     {
@@ -514,6 +514,33 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "keywords",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/keywords",
+      "description": "Key words describing a thing",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/keywords",
+      "owner": "Tool",
+      "domain_of": [
+        "Tool"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "url",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/url",
+      "description": "URL for the tool",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/url",
+      "owner": "Tool",
+      "domain_of": [
+        "Tool"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "toolCollection__entries",
       "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
       "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/entries",
@@ -557,7 +584,9 @@
         "name",
         "description",
         "developer_team",
-        "technical_area"
+        "technical_area",
+        "keywords",
+        "url"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/Tool",
@@ -588,9 +617,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "bdf_toolbox_schema.yaml",
-  "source_file_date": "2024-10-16T21:31:58",
-  "source_file_size": 2551,
-  "generation_date": "2024-10-16T21:40:15",
+  "source_file_date": "2024-10-17T10:02:09",
+  "source_file_size": 2713,
+  "generation_date": "2024-10-17T10:02:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/bdf_toolbox_schema.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from bdf_toolbox_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-16T21:40:15
+# Generation date: 2024-10-17T10:02:19
 # Schema: bdf-toolbox-schema
 #
 # id: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema
@@ -32,13 +32,13 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+BDFT = CurieNamespace('BDFT', 'https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
-BDF_TOOLBOX_SCHEMA = CurieNamespace('bdf_toolbox_schema', 'https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
-DEFAULT_ = BDF_TOOLBOX_SCHEMA
+DEFAULT_ = BDFT
 
 
 # Types
@@ -62,7 +62,7 @@ class NamedThing(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = SCHEMA["Thing"]
     class_class_curie: ClassVar[str] = "schema:Thing"
     class_name: ClassVar[str] = "NamedThing"
-    class_model_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA.NamedThing
+    class_model_uri: ClassVar[URIRef] = BDFT.NamedThing
 
     id: Union[str, NamedThingId] = None
     name: Optional[str] = None
@@ -90,14 +90,16 @@ class Tool(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA["Tool"]
-    class_class_curie: ClassVar[str] = "bdf_toolbox_schema:Tool"
+    class_class_uri: ClassVar[URIRef] = BDFT["Tool"]
+    class_class_curie: ClassVar[str] = "BDFT:Tool"
     class_name: ClassVar[str] = "Tool"
-    class_model_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA.Tool
+    class_model_uri: ClassVar[URIRef] = BDFT.Tool
 
     id: Union[str, ToolId] = None
     developer_team: Optional[Union[str, "BDFPerformerTeam"]] = None
     technical_area: Optional[Union[str, "BDFTechnicalArea"]] = None
+    keywords: Optional[Union[str, List[str]]] = empty_list()
+    url: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -111,6 +113,13 @@ class Tool(NamedThing):
         if self.technical_area is not None and not isinstance(self.technical_area, BDFTechnicalArea):
             self.technical_area = BDFTechnicalArea(self.technical_area)
 
+        if not isinstance(self.keywords, list):
+            self.keywords = [self.keywords] if self.keywords is not None else []
+        self.keywords = [v if isinstance(v, str) else str(v) for v in self.keywords]
+
+        if self.url is not None and not isinstance(self.url, URIorCURIE):
+            self.url = URIorCURIE(self.url)
+
         super().__post_init__(**kwargs)
 
 
@@ -121,10 +130,10 @@ class ToolCollection(YAMLRoot):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA["ToolCollection"]
-    class_class_curie: ClassVar[str] = "bdf_toolbox_schema:ToolCollection"
+    class_class_uri: ClassVar[URIRef] = BDFT["ToolCollection"]
+    class_class_curie: ClassVar[str] = "BDFT:ToolCollection"
     class_name: ClassVar[str] = "ToolCollection"
-    class_model_uri: ClassVar[URIRef] = BDF_TOOLBOX_SCHEMA.ToolCollection
+    class_model_uri: ClassVar[URIRef] = BDFT.ToolCollection
 
     entries: Optional[Union[Dict[Union[str, ToolId], Union[dict, Tool]], List[Union[dict, Tool]]]] = empty_dict()
 
@@ -208,19 +217,25 @@ class slots:
     pass
 
 slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.id, domain=None, range=URIRef)
+                   model_uri=BDFT.id, domain=None, range=URIRef)
 
 slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.name, domain=None, range=Optional[str])
+                   model_uri=BDFT.name, domain=None, range=Optional[str])
 
 slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.description, domain=None, range=Optional[str])
+                   model_uri=BDFT.description, domain=None, range=Optional[str])
 
-slots.developer_team = Slot(uri=BDF_TOOLBOX_SCHEMA.developer_team, name="developer_team", curie=BDF_TOOLBOX_SCHEMA.curie('developer_team'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.developer_team, domain=None, range=Optional[Union[str, "BDFPerformerTeam"]])
+slots.developer_team = Slot(uri=BDFT.developer_team, name="developer_team", curie=BDFT.curie('developer_team'),
+                   model_uri=BDFT.developer_team, domain=None, range=Optional[Union[str, "BDFPerformerTeam"]])
 
-slots.technical_area = Slot(uri=BDF_TOOLBOX_SCHEMA.technical_area, name="technical_area", curie=BDF_TOOLBOX_SCHEMA.curie('technical_area'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.technical_area, domain=None, range=Optional[Union[str, "BDFTechnicalArea"]])
+slots.technical_area = Slot(uri=BDFT.technical_area, name="technical_area", curie=BDFT.curie('technical_area'),
+                   model_uri=BDFT.technical_area, domain=None, range=Optional[Union[str, "BDFTechnicalArea"]])
 
-slots.toolCollection__entries = Slot(uri=BDF_TOOLBOX_SCHEMA.entries, name="toolCollection__entries", curie=BDF_TOOLBOX_SCHEMA.curie('entries'),
-                   model_uri=BDF_TOOLBOX_SCHEMA.toolCollection__entries, domain=None, range=Optional[Union[Dict[Union[str, ToolId], Union[dict, Tool]], List[Union[dict, Tool]]]])
+slots.keywords = Slot(uri=BDFT.keywords, name="keywords", curie=BDFT.curie('keywords'),
+                   model_uri=BDFT.keywords, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.url = Slot(uri=BDFT.url, name="url", curie=BDFT.curie('url'),
+                   model_uri=BDFT.url, domain=None, range=Optional[Union[str, URIorCURIE]])
+
+slots.toolCollection__entries = Slot(uri=BDFT.entries, name="toolCollection__entries", curie=BDFT.curie('entries'),
+                   model_uri=BDFT.toolCollection__entries, domain=None, range=Optional[Union[Dict[Union[str, ToolId], Union[dict, Tool]], List[Union[dict, Tool]]]])

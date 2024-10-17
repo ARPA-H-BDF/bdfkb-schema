@@ -9,13 +9,13 @@ see_also:
   - https://ARPA-H-BDF.github.io/bdf-toolbox-schema
 
 prefixes:
-  bdf_toolbox_schema: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/
+  BDFT: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
   example: https://example.org/
-default_prefix: bdf_toolbox_schema
+default_prefix: BDFT
 default_range: string
 
 imports:
@@ -39,6 +39,8 @@ classes:
     slots:
       - developer_team
       - technical_area
+      - keywords
+      - url
 
   ToolCollection:
     tree_root: true
@@ -63,11 +65,18 @@ slots:
     slot_uri: schema:description
     description: A human-readable description for a thing
   developer_team:
-    range: BDFPerformerTeam
     description: BDF performer team
+    range: BDFPerformerTeam
   technical_area:
-    range: BDFTechnicalArea
     description: BDF Technical Area
+    range: BDFTechnicalArea
+  keywords:
+    description: Key words describing a thing
+    range: string
+    multivalued: true
+  url:
+    description: URL for the tool
+    range: uriorcurie
 
 enums:
   BDFPerformerTeam:

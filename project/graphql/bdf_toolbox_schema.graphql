@@ -13,6 +13,8 @@ type Tool
     description: String
     developerTeam: BDFPerformerTeam
     technicalArea: BDFTechnicalArea
+    keywords: [String]
+    url: Uriorcurie
   }
 
 type ToolCollection

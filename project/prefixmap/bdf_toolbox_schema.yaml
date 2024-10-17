@@ -1,6 +1,6 @@
 {
+   "BDFT": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/",
    "PATO": "http://purl.obolibrary.org/obo/PATO_",
-   "bdf_toolbox_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/",
    "biolink": "https://w3id.org/biolink/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",

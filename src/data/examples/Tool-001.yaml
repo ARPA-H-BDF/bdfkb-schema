@@ -1,7 +1,13 @@
 # Example data object
 ---
 entries:
-  - id: example:Tool001
-    name: foo bar
-    primary_email: foo.bar@example.com
-    age_in_years: 33
+  - id: BDFT:Tool001
+    name: BDF Tool Foo
+    description: AI tool for automated data extraction.
+    developer_team: ASKEM_NEU
+    technical_area: TA1
+    keywords: 
+      - AI
+      - data extraction
+    url: https://github.com/ARPA-H-BDF/BDFToolFoo
+

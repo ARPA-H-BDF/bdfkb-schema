@@ -74,7 +74,9 @@ linkml:Sparqlpath xsd:string
              <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam#Insilicom> ] ? ;
           <technical_area> [ <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA1>
              <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA2>
-             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> ] ?
+             <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea#TA3> ] ? ;
+          <keywords> @linkml:String * ;
+          <url> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <Tool> ]
     )

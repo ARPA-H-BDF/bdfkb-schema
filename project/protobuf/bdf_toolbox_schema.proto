@@ -16,6 +16,8 @@ message Tool
   string description = 0
   bDFPerformerTeam developerTeam = 0
   bDFTechnicalArea technicalArea = 0
+ repeated  string keywords = 0
+  uriorcurie url = 0
  }
 // A holder for Tool objects
 message ToolCollection

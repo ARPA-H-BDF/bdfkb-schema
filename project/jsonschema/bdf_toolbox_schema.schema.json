@@ -83,6 +83,16 @@
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
+                "keywords": {
+                    "description": "Key words describing a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -93,6 +103,13 @@
                 "technical_area": {
                     "$ref": "#/$defs/BDFTechnicalArea",
                     "description": "BDF Technical Area"
+                },
+                "url": {
+                    "description": "URL for the tool",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -144,6 +161,16 @@
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
+                "keywords": {
+                    "description": "Key words describing a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -154,6 +181,13 @@
                 "technical_area": {
                     "$ref": "#/$defs/BDFTechnicalArea",
                     "description": "BDF Technical Area"
+                },
+                "url": {
+                    "description": "URL for the tool",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
