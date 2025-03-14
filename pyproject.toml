@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "bdf_toolbox_schema"
+name = "bdfkb_schema"
 version = "0.1.0"
 description = "Schema to describe BDF Toolbox entities and the relationships between them."
 authors = ["James Eddy <james.a.eddy@gmail.com>"]
 license = "Apache Software License 2.0"
 readme = "README.md"
-include = ["README.md", "src/bdf_toolbox_schema/schema", "project"]
+include = ["README.md", "src/bdfkb_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

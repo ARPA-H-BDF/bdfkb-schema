@@ -1,4 +1,4 @@
-name: Preview bdf_toolbox_schema documentation build
+name: Preview bdfkb_schema documentation build
 
 on:
   pull_request:

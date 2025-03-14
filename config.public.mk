@@ -7,10 +7,10 @@
 ###### schema definition variables, used by makefile
 
 # Note: makefile variables should not be quoted, as makefile handles quoting differently than bash
-LINKML_SCHEMA_NAME=bdf_toolbox_schema
+LINKML_SCHEMA_NAME=bdfkb_schema
 LINKML_SCHEMA_AUTHOR=James Eddy <james.a.eddy@gmail.com>
 LINKML_SCHEMA_DESCRIPTION=Schema to describe BDF Toolbox entities and the relationships between them.
-LINKML_SCHEMA_SOURCE_PATH=src/bdf_toolbox_schema/schema/bdf_toolbox_schema.yaml
+LINKML_SCHEMA_SOURCE_PATH=src/bdfkb_schema/schema/bdfkb_schema.yaml
 LINKML_SCHEMA_GOOGLE_SHEET_ID=1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
 LINKML_SCHEMA_GOOGLE_SHEET_TABS=personinfo enums
 

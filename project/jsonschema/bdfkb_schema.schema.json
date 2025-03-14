@@ -195,7 +195,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+    "$id": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "A holder for Tool objects",
@@ -218,7 +218,7 @@
             ]
         }
     },
-    "title": "bdf-toolbox-schema",
+    "title": "bdfkb-schema",
     "type": "object",
     "version": null
 }

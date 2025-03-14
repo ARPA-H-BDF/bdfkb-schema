@@ -1,0 +1,90 @@
+# metamodel_version: 1.7.0
+BASE <https://w3id.org/ARPA-H-BDF/bdfkb-schema/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX schema1: <http://schema.org/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<NamedThing>  (
+    CLOSED {
+       (  $<NamedThing_tes> (  schema1:name @linkml:String ? ;
+             schema1:description @linkml:String ?
+          ) ;
+          rdf:type [ schema1:Thing ]
+       )
+    } OR @<Tool>
+)
+
+<Tool> CLOSED {
+    (  $<Tool_tes> (  &<NamedThing_tes> ;
+          rdf:type [ schema1:Thing ] ? ;
+          <developer_team> [ <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NEU>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_MIT>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NYU>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_Jataware>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Netrias>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#N3C>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#BDC>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#CRA>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#DNAHIVE>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#HMS>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Stanford>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#UAB>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ICF>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#SageBio>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Insilicom> ] ? ;
+          <technical_area> [ <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA1>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA2>
+             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA3> ] ? ;
+          <keywords> @linkml:String * ;
+          <url> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <Tool> ]
+    )
+}
+
+<ToolCollection> CLOSED {
+    (  $<ToolCollection_tes> <entries> @<Tool> * ;
+       rdf:type [ <ToolCollection> ] ?
+    )
+}
+

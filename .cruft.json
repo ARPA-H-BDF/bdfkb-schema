@@ -4,10 +4,10 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "bdf-toolbox-schema",
-      "__project_slug": "bdf_toolbox_schema",
+      "project_name": "bdfkb-schema",
+      "__project_slug": "bdfkb_schema",
       "github_org": "ARPA-H-BDF",
-      "__source_path": "src/bdf_toolbox_schema/schema/bdf_toolbox_schema.yaml",
+      "__source_path": "src/bdfkb_schema/schema/bdfkb_schema.yaml",
       "project_description": "Schema to describe BDF Toolbox entities and the relationships between them.",
       "full_name": "James Eddy",
       "email": "james.a.eddy@gmail.com",

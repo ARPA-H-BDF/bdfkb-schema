@@ -1,4 +1,4 @@
-@prefix BDFT: <https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/> .
+@prefix BDFT: <https://w3id.org/ARPA-H-BDF/bdfkb-schema/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .

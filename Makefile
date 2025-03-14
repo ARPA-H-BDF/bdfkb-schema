@@ -172,7 +172,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/bdf_toolbox_schema/schema/bdf_toolbox_schema.yaml
+examples/output: src/bdfkb_schema/schema/bdfkb_schema.yaml
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \

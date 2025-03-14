@@ -1,1 +1,1 @@
-"""Tests for bdf-toolbox-schema."""
+"""Tests for bdfkb-schema."""

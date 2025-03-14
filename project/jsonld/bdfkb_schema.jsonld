@@ -1,11 +1,11 @@
 {
-  "name": "bdf-toolbox-schema",
+  "name": "bdfkb-schema",
   "description": "Schema to describe BDF Toolbox entities and the relationships between them.",
-  "title": "bdf-toolbox-schema",
+  "title": "bdfkb-schema",
   "see_also": [
-    "https://ARPA-H-BDF.github.io/bdf-toolbox-schema"
+    "https://ARPA-H-BDF.github.io/bdfkb-schema"
   ],
-  "id": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+  "id": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
   "imports": [
     "linkml:types"
   ],
@@ -13,7 +13,7 @@
   "prefixes": [
     {
       "prefix_prefix": "BDFT",
-      "prefix_reference": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/"
+      "prefix_reference": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/"
     },
     {
       "prefix_prefix": "linkml",
@@ -351,8 +351,8 @@
   "enums": [
     {
       "name": "BDFPerformerTeam",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFPerformerTeam",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "permissible_values": [
         {
           "text": "ASKEM_NEU",
@@ -418,8 +418,8 @@
     },
     {
       "name": "BDFTechnicalArea",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/BDFTechnicalArea",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "permissible_values": [
         {
           "text": "TA1",
@@ -439,9 +439,9 @@
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/id",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/id",
       "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "mappings": [
         "http://schema.org/identifier"
       ],
@@ -457,9 +457,9 @@
     },
     {
       "name": "name",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/name",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -473,9 +473,9 @@
     },
     {
       "name": "description",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/description",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/description",
       "description": "A human-readable description for a thing",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "mappings": [
         "http://schema.org/description"
       ],
@@ -489,10 +489,10 @@
     },
     {
       "name": "developer_team",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/developer_team",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/developer_team",
       "description": "BDF performer team",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/developer_team",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/developer_team",
       "owner": "Tool",
       "domain_of": [
         "Tool"
@@ -502,10 +502,10 @@
     },
     {
       "name": "technical_area",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/technical_area",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/technical_area",
       "description": "BDF Technical Area",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/technical_area",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/technical_area",
       "owner": "Tool",
       "domain_of": [
         "Tool"
@@ -515,10 +515,10 @@
     },
     {
       "name": "keywords",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/keywords",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/keywords",
       "description": "Key words describing a thing",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/keywords",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/keywords",
       "owner": "Tool",
       "domain_of": [
         "Tool"
@@ -529,10 +529,10 @@
     },
     {
       "name": "url",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/url",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/url",
       "description": "URL for the tool",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/url",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/url",
       "owner": "Tool",
       "domain_of": [
         "Tool"
@@ -542,8 +542,8 @@
     },
     {
       "name": "toolCollection__entries",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
-      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/entries",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
+      "slot_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/entries",
       "alias": "entries",
       "owner": "ToolCollection",
       "domain_of": [
@@ -558,9 +558,9 @@
   "classes": [
     {
       "name": "NamedThing",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/NamedThing",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/NamedThing",
       "description": "A generic grouping for any identifiable entity",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "mappings": [
         "schema:Thing"
       ],
@@ -575,9 +575,9 @@
     },
     {
       "name": "Tool",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/Tool",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/Tool",
       "description": "Represents a Tool",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "is_a": "NamedThing",
       "slots": [
         "id",
@@ -589,14 +589,14 @@
         "url"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/Tool",
+      "class_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/Tool",
       "@type": "ClassDefinition"
     },
     {
       "name": "ToolCollection",
-      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/ToolCollection",
+      "definition_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/ToolCollection",
       "description": "A holder for Tool objects",
-      "from_schema": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema",
+      "from_schema": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
       "slots": [
         "toolCollection__entries"
       ],
@@ -610,22 +610,22 @@
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/ToolCollection",
+      "class_uri": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/ToolCollection",
       "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "bdf_toolbox_schema.yaml",
+  "source_file": "bdfkb_schema.yaml",
   "source_file_date": "2024-10-17T10:02:09",
   "source_file_size": 2713,
   "generation_date": "2024-10-17T10:02:19",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/bdf_toolbox_schema.context.jsonld",
+    "project/jsonld/bdfkb_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/"
+      "@base": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/"
     }
   ]
 }

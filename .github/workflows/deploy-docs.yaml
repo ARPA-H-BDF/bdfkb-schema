@@ -1,5 +1,5 @@
 ---
-name: Auto-deployment of bdf_toolbox_schema Documentation
+name: Auto-deployment of bdfkb_schema Documentation
 on:
   push:
     branches: [main]

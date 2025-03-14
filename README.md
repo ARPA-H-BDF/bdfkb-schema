@@ -1,20 +1,20 @@
-# bdf-toolbox-schema
+# bdfkb-schema
 
 Schema to describe BDF Toolbox entities and the relationships between them.
 
 ## Website
 
-[https://ARPA-H-BDF.github.io/bdf-toolbox-schema](https://ARPA-H-BDF.github.io/bdf-toolbox-schema)
+[https://ARPA-H-BDF.github.io/bdfkb-schema](https://ARPA-H-BDF.github.io/bdfkb-schema)
 
 ## Repository Structure
 
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [bdf_toolbox_schema](src/bdf_toolbox_schema)
-    * [schema](src/bdf_toolbox_schema/schema) -- LinkML schema
+  * [bdfkb_schema](src/bdfkb_schema)
+    * [schema](src/bdfkb_schema/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/bdf_toolbox_schema/datamodel) -- generated
+    * [datamodel](src/bdfkb_schema/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
 

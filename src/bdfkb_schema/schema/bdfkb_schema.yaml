@@ -1,15 +1,15 @@
 ---
-id: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema
-name: bdf-toolbox-schema
-title: bdf-toolbox-schema
+id: https://w3id.org/ARPA-H-BDF/bdfkb-schema
+name: bdfkb-schema
+title: bdfkb-schema
 description: |-
   Schema to describe BDF Toolbox entities and the relationships between them.
 license: Apache Software License 2.0
 see_also:
-  - https://ARPA-H-BDF.github.io/bdf-toolbox-schema
+  - https://ARPA-H-BDF.github.io/bdfkb-schema
 
 prefixes:
-  BDFT: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/
+  BDFT: https://w3id.org/ARPA-H-BDF/bdfkb-schema/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/

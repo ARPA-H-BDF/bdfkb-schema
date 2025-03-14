@@ -1,8 +1,8 @@
-# Auto generated from bdf_toolbox_schema.yaml by pythongen.py version: 0.0.1
+# Auto generated from bdfkb_schema.yaml by pythongen.py version: 0.0.1
 # Generation date: 2024-10-17T10:02:19
-# Schema: bdf-toolbox-schema
+# Schema: bdfkb-schema
 #
-# id: https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema
+# id: https://w3id.org/ARPA-H-BDF/bdfkb-schema
 # description: Schema to describe BDF Toolbox entities and the relationships between them.
 # license: Apache Software License 2.0
 
@@ -32,7 +32,7 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-BDFT = CurieNamespace('BDFT', 'https://w3id.org/ARPA-H-BDF/bdf-toolbox-schema/')
+BDFT = CurieNamespace('BDFT', 'https://w3id.org/ARPA-H-BDF/bdfkb-schema/')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')

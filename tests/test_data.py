@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from bdf_toolbox_schema.datamodel.bdf_toolbox_schema import ToolCollection
+from bdfkb_schema.datamodel.bdfkb_schema import ToolCollection
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
