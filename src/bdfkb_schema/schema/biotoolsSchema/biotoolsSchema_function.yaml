@@ -1,0 +1,112 @@
+name: biotoolsSchema-function
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#function-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+classes:
+
+  ToolFunction:
+    description: Details of a function (i.e. mode of operation) the software provides,
+      expressed in concepts from the EDAM ontology.
+    slots:
+    - operation
+    - input
+    - output
+    - note
+    - cmd
+    slot_usage:
+      note:
+        description: Concise comment about this function, if not apparent from the
+          software description and EDAM annotations.
+
+  EDAMOperation:
+    description: The basic operation(s) performed by this software function (EDAM
+      Operation).
+    slots:
+    - term
+    - uri
+    slot_usage:
+      term:
+        description: An EDAM Operation term (preferred label or synonym).
+      uri:
+        description: 'URL of an EDAM Operation concept. (NOTE: The URL must be in
+          the EDAM Operation namespace, i.e. http://edamontology.org/operation.)'
+
+  ToolInput:
+    description: Details of primary input data.
+    slots:
+    - data
+    - format
+    slot_usage:
+      data:
+        description: Type of primary input data, if any (EDAM data).
+        required: true
+      format:
+        description: 'Allowed format(s) of the input data (EDAM Format). '
+        multivalued: true
+
+  ToolOutput:
+    description: Details of primary output data.
+    slots:
+    - data
+    - format
+    slot_usage:
+      data:
+        description: Type of primary output data, if any (EDAM Data).
+        required: true
+      format:
+        description: Allowed format(s) of the output data (EDAM Format).
+        multivalued: true
+
+  EDAMData:
+    description: EDAM Data concept.
+    slots:
+    - term
+    - uri
+    slot_usage:
+      term:
+        description: An EDAM Data term (preferred label or synonym).
+      uri:
+        description: URL of an EDAM Data concept.
+
+  EDAMFormat:
+    description: EDAM Format concept.
+    slots:
+    - term
+    - uri
+    slot_usage:
+      term:
+        description: An EDAM Format term (preferred label or synonym).
+      uri:
+        description: URL of an EDAM Format concept.
+
+
+slots:
+  operation:
+    description: The basic operation(s) performed by this software function (EDAM
+      Operation).
+    range: EDAMOperation
+    required: true
+    multivalued: true
+  input:
+    description: Details of primary input data.
+    range: ToolInput
+    multivalued: true
+  output:
+    description: Details of primary output data.
+    range: ToolOutput
+    multivalued: true
+  cmd:
+    description: Relevant command, command-line fragment or option for executing
+      this function / running the tool in this mode.
+  data:
+    range: EDAMData
+  format:
+    range: EDAMFormat

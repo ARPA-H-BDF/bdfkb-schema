@@ -1,0 +1,93 @@
+name: biotoolsSchema-credit
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#credit-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolCredit:
+    description: An individual or organisation that should be credited, or may be
+      contacted about the software.
+    slots:
+    - name
+    - email
+    - url
+    - orcidid
+    - gridid
+    - rorid
+    - fundrefid
+    - typeEntity
+    - typeRole
+    - note
+    slot_usage:
+      name:
+        description: Name of the entity that is credited.
+        required: true
+      email:
+        description: Email address of the entity that is credited.
+      url:
+        description: 'URL for the entity that is credited, e.g. homepage of an institute.
+          (NOTE: An HTTP or HTTPS URL.)'
+      note:
+        description: 'A comment about the credit.
+
+          This can elaborate on the contribution of the credited entity.'
+        range: TextType
+
+
+slots:
+  orcidid:
+    description: 'Unique identifier (ORCID iD) of a person that is credited. (NOTE:
+      Open Researcher and Contributor IDs (ORCID IDs) provide a persistent reference
+      to information on a researcher, see http://orcid.org/.)'
+    range: string
+  gridid:
+    description: 'Unique identifier (GRID ID) of an organisation that is credited.
+      (NOTE: Global Research Identifier Database (GRID) IDs provide a persistent
+      reference to information on research organisations, see https://www.grid.ac/.)'
+    range: string
+  rorid:
+    description: 'Unique identifier (ROR ID) of an organisation that is credited.
+      (NOTE: Research Organization Registry (ROR) IDs provide a persistent reference
+      to information on research organisations, see https://ror.org/.)'
+  fundrefid:
+    description: 'Unique identifier (FundRef ID or Funder ID) of a funding organisation
+      that is credited. (NOTE: The Funder Registry (formerly FundRef) IDs provide
+      a persistent reference to information on funding organisations registered
+      in the Crossref registry, see https://www.crossref.org/services/funder-registry/.)'
+    range: string
+  typeEntity:
+    description: Type of entity that is credited.
+    range: EntityTypeOption
+  typeRole:
+    description: Role performed by entity that is credited.
+    range: RoleTypeOption
+    multivalued: true
+
+
+enums:
+  EntityTypeOption:
+    permissible_values:
+      Person: {}
+      Project: {}
+      Division: {}
+      Institute: {}
+      Consortium: {}
+      Funding agency: {}
+  RoleTypeOption:
+    permissible_values:
+      Primary contact: {}
+      Contributor: {}
+      Developer: {}
+      Documentor: {}
+      Maintainer: {}
+      Provider: {}
+      Support: {}

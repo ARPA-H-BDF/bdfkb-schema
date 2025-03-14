@@ -1,0 +1,147 @@
+name: biotoolsSchema-tool
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+- biotoolsSchema_labels
+- biotoolsSchema_function
+- biotoolsSchema_link
+- biotoolsSchema_download
+- biotoolsSchema_documentation
+- biotoolsSchema_relation
+- biotoolsSchema_publication
+- biotoolsSchema_credit
+
+classes:
+
+  Tool:
+    description: Attributes of a bioinformatics tool.
+    tree_root: true
+    slots:
+    - name
+    - description
+    - homepage
+    - biotoolsID
+    - biotoolsCURIE
+    - version
+    - otherID
+    - toolType
+    - topic
+    - operatingSystem
+    - language
+    - license
+    - collectionID
+    - maturity
+    - cost
+    - accessibility
+    - elixirPlatform
+    - elixirNode
+    - elixirCommunity
+    - function
+    - link
+    - download
+    - documentation
+    - relation
+    - publication
+    - credit
+    slot_usage:
+      version:
+        description: Version information (typically a version number) of the software
+          applicable to this publication.
+        range: VersionType
+
+  ToolUniqueIdentifier:
+    description: A unique identifier of the software, typically assigned by an ID-assignment
+      authority other than bio.tools.
+    slots:
+    - type
+    - value
+    - version
+    slot_usage:
+      type:
+        description: Type of tool identifier.
+        range: IdentifierTypeOption
+      value:
+        description: Value of tool identifier.
+        required: true
+      version:
+        description: Version information (typically a version number) of the software
+          applicable to this identifier.
+
+
+slots:
+  name:
+    description: Canonical software name assigned by the software developer or service provider.
+    range: string
+    required: true
+  description:
+    description: 'Textual description of the software.
+
+      This can be a few sentences copy-pasted from the software homepage.'
+    range: string
+    required: true
+  homepage:
+    description: Homepage of the software, or some URL that best serves this purpose.
+    range: UrlftpType
+    required: true
+  biotoolsID:
+    description: bio.tools ID of an existing bio.tools entry to which this software
+      is related.
+    range: BiotoolsIdType
+  biotoolsCURIE:
+    description: bio.tools CURIE (compact URI) based on the bio.tools tool ID.
+    range: string
+  otherID:
+    description: A unique identifier of the software, typically assigned by an ID-assignment
+      authority other than bio.tools.
+    range: ToolUniqueIdentifiers
+    multivalued: true
+  function:
+    description: Details of a function (i.e. mode of operation) the software provides,
+      expressed in concepts from the EDAM ontology.
+    range: ToolFunction
+    multivalued: true
+  link:
+    description: A miscellaneous link for the software e.g. repository, issue tracker
+      or mailing list.
+    range: ToolLink
+    multivalued: true
+  download:
+    description: A link to a download for the software, e.g. source code, virtual
+      machine image or container.
+    range: ToolDownload
+    multivalued: true
+  documentation:
+    description: A link to documentation about the software e.g. user manual,
+      API documentation or training material.
+    range: ToolDocumentation
+    multivalued: true
+  relation:
+    description: Details of a relationship this software shares with other software
+      registered in bio.tools.
+    range: ToolRelationship
+    multivalued: true
+  publication:
+    description: A publication about the software.
+    range: ToolPublication
+    multivalued: true
+  credit:
+    description: An individual or organisation that should be credited, or may
+      be contacted about the software.
+    range: ToolCredit
+    multivalued: true
+
+
+enums:
+  IdentifierTypeOption:
+    permissible_values:
+      doi: {}
+      rrid: {}
+      cpe: {}
+      biotoolsCURIE: {}

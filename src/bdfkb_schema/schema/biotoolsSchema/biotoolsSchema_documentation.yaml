@@ -1,0 +1,55 @@
+name: biotoolsSchema-documentation
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#documentation-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolDocumentation:
+    description: A link to documentation about the software e.g. user manual, API
+      documentation or training material.
+    slots:
+    - url
+    - type
+    - note
+    slot_usage:
+      url:
+        description: Link to documentation on the web for the tool.
+        range: UrlftpType
+        required: true
+      type:
+        description: Type of documentation that is linked to.
+        range: DocumentationTypeOption
+        required: true
+        multivalued: true
+      note:
+        description: Comment about the documentation.
+        range: TextType
+
+
+enums:
+  DocumentationTypeOption:
+    permissible_values:
+      API documentation: {}
+      Citation instructions: {}
+      Code of conduct: {}
+      Command-line options: {}
+      Contributions policy: {}
+      FAQ: {}
+      General: {}
+      Governance: {}
+      Installation instructions: {}
+      Quick start guide: {}
+      Release notes: {}
+      Terms of use: {}
+      Training material: {}
+      User manual: {}
+      Other: {}

@@ -1,0 +1,52 @@
+name: biotoolsSchema-link
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#link-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolLink:
+    description: A miscellaneous link for the software e.g. repository, issue tracker
+      or mailing list.
+    slots:
+    - url
+    - type
+    - note
+    slot_usage:
+      url:
+        description: A link of some relevance to the software (URL).
+        range: UrlftpType
+      type:
+        description: The type of data, information or system that is obtained when
+          the link is resolved.
+        range: LinkTypeOption
+        required: true
+        multivalued: true
+      note:
+        description: Comment about the link.
+        range: TextType
+
+
+enums:
+  LinkTypeOption:
+    permissible_values:
+      Discussion forum: {}
+      Galaxy service: {}
+      Helpdesk: {}
+      Issue tracker: {}
+      Mailing list: {}
+      Mirror: {}
+      Software catalogue: {}
+      Repository: {}
+      Service: {}
+      Social media: {}
+      Technical monitoring: {}
+      Other: {}

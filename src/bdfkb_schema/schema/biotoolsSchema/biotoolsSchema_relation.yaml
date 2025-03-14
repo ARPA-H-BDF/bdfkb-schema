@@ -1,0 +1,43 @@
+name: biotoolsSchema-relation
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#relation-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolRelationship:
+    description: Details of a relationship this software shares with other software
+      registered in bio.tools.
+    slots:
+    - type
+    - biotoolsID
+    slot_usage:
+      type:
+        description: 'Type of relation between this and another registered software.
+          (NOTE: Certain relations may only be defined between certain types of tool.)'
+        range: RelationshipTypeOption
+        required: true
+      biotoolsID:
+        description: bio.tools ID of an existing bio.tools entry to which this software
+          is related.
+        range: BiotoolsIdType
+        required: true
+
+
+enums:
+  RelationshipTypeOption:
+    permissible_values:
+      isNewVersionOf: {}
+      hasNewVersion: {}
+      uses: {}
+      usedBy: {}
+      includes: {}
+      includedIn: {}

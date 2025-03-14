@@ -1,0 +1,60 @@
+name: biotoolsSchema-publication
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#publication-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolPublication:
+    description: A publication about the software.
+    slots:
+    - doi
+    - pmid
+    - pmcid
+    - type
+    - note
+    - version
+    slot_usage:
+      type:
+        description: Type of publication.
+        range: PublicationTypeOption
+        multivalued: true
+      note:
+        description: Comment about the publication.
+        range: TextType
+      version:
+        description: Version information (typically a version number) of the software
+          applicable to this publication.
+        range: VersionType
+
+
+slots:
+  doi:
+    description: Digital Object Identifier (DOI) of a publication about the software.
+    range: string
+  pmid:
+    description: PubMed Identifier (PMID) of a publication about the software.
+    range: string
+  pmcid:
+    description: PubMed Central Identifier (PMCID) of a publication about the
+      software.
+    range: string
+
+
+enums:
+  PublicationTypeOption:
+    permissible_values:
+      Primary: {}
+      Benchmarking study: {}
+      Method: {}
+      Usage: {}
+      Review: {}
+      Other: {}

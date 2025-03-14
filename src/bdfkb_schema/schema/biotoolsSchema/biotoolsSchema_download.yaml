@@ -1,0 +1,63 @@
+name: biotoolsSchema-download
+id: https://biotoolsschema.readthedocs.io/en/latest/biotoolsschema_elements.html#download-group
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+- biotoolsSchema_types
+
+
+classes:
+
+  ToolDownload:
+    description: A link to a download for the software, e.g. source code, virtual
+      machine image or container.
+    slots:
+    - url
+    - type
+    - note
+    - version
+    slot_usage:
+      url:
+        description: Link to download (or repository providing a download) for the
+          software.
+        range: UrlftpType
+        required: true
+      type:
+        description: Type of download that is linked to.
+        range: DownloadTypeOption
+        required: true
+      note:
+        description: Comment about the download.
+        range: TextType
+      version:
+        description: Version information (typically a version number) of the software
+          applicable to this download.
+        range: VersionType
+
+
+enums:
+  DownloadTypeOption:
+    permissible_values:
+      API specification: {}
+      Biological data: {}
+      Binaries: {}
+      Command-line specification: {}
+      Container file: {}
+      Icon: {}
+      Software package: {}
+      Screenshot: {}
+      Source code: {}
+      Test data: {}
+      Test script: {}
+      Tool wrapper (CWL): {}
+      Tool wrapper (Galaxy): {}
+      Tool wrapper (Taverna): {}
+      Tool wrapper (Other): {}
+      VM image: {}
+      Downloads page: {}
+      Other: {}

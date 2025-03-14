@@ -1,0 +1,47 @@
+name: biotoolsSchema-types
+id: https://biotoolsschema.readthedocs.io/en/latest/
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+imports:
+- linkml:types
+
+
+types:
+
+  TextType:
+    description: Free text with a minimum length of 10 and maximum length of 1000.
+    typeof: string
+  UrlftpType:
+    description: Homepage of the software, or some URL that best serves this purpose.
+    typeof: string
+  VersionType:
+    description: Tool version label or version range.
+    typeof: string
+  BiotoolsIdType:
+    description: Tool unique identifier assigned by bio.tools
+    typeof: string
+
+
+slots:
+  name:
+    range: string
+  email:
+    range: string
+  note:
+    range: string
+  term:
+    range: string
+  type:
+    range: string
+  uri:
+    range: string
+  url:
+    range: string
+  value:
+    range: string
+  version:
+    range: string
