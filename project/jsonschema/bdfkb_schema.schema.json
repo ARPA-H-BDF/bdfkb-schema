@@ -1,57 +1,22 @@
 {
     "$defs": {
-        "BDFPerformerTeam": {
-            "description": "",
-            "enum": [
-                "ASKEM_NEU",
-                "ASKEM_MIT",
-                "ASKEM_NYU",
-                "ASKEM_Jataware",
-                "Netrias",
-                "N3C",
-                "BDC",
-                "CRA",
-                "DNAHIVE",
-                "HMS",
-                "Stanford",
-                "UAB",
-                "ICF",
-                "SageBio",
-                "Insilicom"
-            ],
-            "title": "BDFPerformerTeam",
-            "type": "string"
-        },
-        "BDFTechnicalArea": {
-            "description": "",
-            "enum": [
-                "TA1",
-                "TA2",
-                "TA3"
-            ],
-            "title": "BDFTechnicalArea",
-            "type": "string"
-        },
         "NamedThing": {
             "additionalProperties": false,
             "description": "A generic grouping for any identifiable entity",
             "properties": {
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A human-readable description for a thing.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "A unique identifier for a thing.",
+                    "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "A human-readable name for a thing.",
                     "type": [
                         "string",
                         "null"
@@ -66,46 +31,21 @@
         },
         "Tool": {
             "additionalProperties": false,
-            "description": "Represents a Tool",
+            "description": "",
             "properties": {
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A human-readable description for a thing.",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "developer_team": {
-                    "$ref": "#/$defs/BDFPerformerTeam",
-                    "description": "BDF performer team"
                 },
                 "id": {
-                    "description": "A unique identifier for a thing",
+                    "description": "A unique identifier for a thing.",
                     "type": "string"
                 },
-                "keywords": {
-                    "description": "Key words describing a thing",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "technical_area": {
-                    "$ref": "#/$defs/BDFTechnicalArea",
-                    "description": "BDF Technical Area"
-                },
-                "url": {
-                    "description": "URL for the tool",
+                    "description": "A human-readable name for a thing.",
                     "type": [
                         "string",
                         "null"
@@ -117,107 +57,12 @@
             ],
             "title": "Tool",
             "type": "object"
-        },
-        "ToolCollection": {
-            "additionalProperties": false,
-            "description": "A holder for Tool objects",
-            "properties": {
-                "entries": {
-                    "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Tool__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": [
-                        "object",
-                        "null"
-                    ]
-                }
-            },
-            "title": "ToolCollection",
-            "type": "object"
-        },
-        "Tool__identifier_optional": {
-            "additionalProperties": false,
-            "description": "Represents a Tool",
-            "properties": {
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "developer_team": {
-                    "$ref": "#/$defs/BDFPerformerTeam",
-                    "description": "BDF performer team"
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "keywords": {
-                    "description": "Key words describing a thing",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "technical_area": {
-                    "$ref": "#/$defs/BDFTechnicalArea",
-                    "description": "BDF Technical Area"
-                },
-                "url": {
-                    "description": "URL for the tool",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "Tool",
-            "type": "object"
         }
     },
     "$id": "https://w3id.org/ARPA-H-BDF/bdfkb-schema",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "A holder for Tool objects",
     "metamodel_version": "1.7.0",
-    "properties": {
-        "entries": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/$defs/Tool__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
-            },
-            "type": [
-                "object",
-                "null"
-            ]
-        }
-    },
     "title": "bdfkb-schema",
     "type": "object",
     "version": null

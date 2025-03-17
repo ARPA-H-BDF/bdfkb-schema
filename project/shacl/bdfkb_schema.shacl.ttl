@@ -1,86 +1,53 @@
-@prefix BDFT: <https://w3id.org/ARPA-H-BDF/bdfkb-schema/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-schema1:Thing a sh:NodeShape ;
+<http://schema.org/thing> a sh:NodeShape ;
     sh:closed true ;
     sh:description "A generic grouping for any identifiable entity" ;
-    sh:ignoredProperties ( BDFT:developer_team BDFT:keywords rdf:type BDFT:technical_area BDFT:url ) ;
+    sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:anyURI ;
-            sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:order 1 ;
-            sh:path schema1:name ] ;
-    sh:targetClass schema1:Thing .
-
-BDFT:ToolCollection a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A holder for Tool objects" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class BDFT:Tool ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path BDFT:entries ] ;
-    sh:targetClass BDFT:ToolCollection .
-
-BDFT:Tool a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "Represents a Tool" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "BDF Technical Area" ;
-            sh:in ( "TA1" "TA2" "TA3" ) ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path BDFT:technical_area ],
-        [ sh:datatype xsd:anyURI ;
-            sh:description "A unique identifier for a thing" ;
+            sh:description "A unique identifier for a thing." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 4 ;
-            sh:path schema1:identifier ],
+            sh:order 0 ;
+            sh:path <http://schema.org/identifier> ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
+            sh:description "A human-readable name for a thing." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 6 ;
-            sh:path schema1:description ],
-        [ sh:description "BDF performer team" ;
-            sh:in ( "ASKEM_NEU" "ASKEM_MIT" "ASKEM_NYU" "ASKEM_Jataware" "Netrias" "N3C" "BDC" "CRA" "DNAHIVE" "HMS" "Stanford" "UAB" "ICF" "SageBio" "Insilicom" ) ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path BDFT:developer_team ],
+            sh:order 1 ;
+            sh:path <http://schema.org/name> ],
         [ sh:datatype xsd:string ;
-            sh:description "Key words describing a thing" ;
+            sh:description "A human-readable description for a thing." ;
+            sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:order 2 ;
-            sh:path BDFT:keywords ],
+            sh:path <http://schema.org/description> ] ;
+    sh:targetClass <http://schema.org/thing> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/Tool> a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A human-readable description for a thing." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path <http://schema.org/description> ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
+            sh:description "A human-readable name for a thing." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 5 ;
-            sh:path schema1:name ],
+            sh:order 1 ;
+            sh:path <http://schema.org/name> ],
         [ sh:datatype xsd:anyURI ;
-            sh:description "URL for the tool" ;
+            sh:description "A unique identifier for a thing." ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:order 3 ;
-            sh:path BDFT:url ] ;
-    sh:targetClass BDFT:Tool .
+            sh:order 0 ;
+            sh:path <http://schema.org/identifier> ] ;
+    sh:targetClass <https://w3id.org/ARPA-H-BDF/bdfkb-schema/Tool> .
 

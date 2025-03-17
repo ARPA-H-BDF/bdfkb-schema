@@ -1,247 +1,9 @@
-@prefix BDFT: <https://w3id.org/ARPA-H-BDF/bdfkb-schema/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-BDFT:ToolCollection a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "ToolCollection" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom BDFT:Tool ;
-            owl:onProperty BDFT:entries ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:entries ] ;
-    skos:definition "A holder for Tool objects" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:NamedThing a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "NamedThing" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty BDFT:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty BDFT:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty BDFT:id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty BDFT:id ] ;
-    skos:definition "A generic grouping for any identifiable entity" ;
-    skos:exactMatch schema1:Thing ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:Tool a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "Tool" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:keywords ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty BDFT:url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom BDFT:BDFPerformerTeam ;
-            owl:onProperty BDFT:developer_team ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:developer_team ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty BDFT:technical_area ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:url ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:technical_area ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom BDFT:BDFTechnicalArea ;
-            owl:onProperty BDFT:technical_area ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty BDFT:keywords ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty BDFT:developer_team ],
-        BDFT:NamedThing ;
-    skos:definition "Represents a Tool" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_Jataware> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "ASKEM_Jataware" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_MIT> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "ASKEM_MIT" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NEU> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "ASKEM_NEU" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NYU> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "ASKEM_NYU" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#BDC> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "BDC" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#CRA> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "CRA" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#DNAHIVE> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "DNAHIVE" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#HMS> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "HMS" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ICF> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "ICF" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Insilicom> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "Insilicom" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#N3C> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "N3C" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Netrias> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "Netrias" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#SageBio> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "SageBio" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Stanford> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "Stanford" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#UAB> a owl:Class,
-        BDFT:BDFPerformerTeam ;
-    rdfs:label "UAB" ;
-    rdfs:subClassOf BDFT:BDFPerformerTeam .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA1> a owl:Class,
-        BDFT:BDFTechnicalArea ;
-    rdfs:label "TA1" ;
-    rdfs:subClassOf BDFT:BDFTechnicalArea .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA2> a owl:Class,
-        BDFT:BDFTechnicalArea ;
-    rdfs:label "TA2" ;
-    rdfs:subClassOf BDFT:BDFTechnicalArea .
-
-<https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA3> a owl:Class,
-        BDFT:BDFTechnicalArea ;
-    rdfs:label "TA3" ;
-    rdfs:subClassOf BDFT:BDFTechnicalArea .
-
-BDFT:entries a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "entries" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:keywords a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "keywords" ;
-    rdfs:range linkml:String ;
-    skos:definition "Key words describing a thing" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:description a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "description" ;
-    skos:definition "A human-readable description for a thing" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:developer_team a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "developer_team" ;
-    rdfs:range BDFT:BDFPerformerTeam ;
-    skos:definition "BDF performer team" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "id" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "A unique identifier for a thing" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    skos:definition "A human-readable name for a thing" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:technical_area a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "technical_area" ;
-    rdfs:range BDFT:BDFTechnicalArea ;
-    skos:definition "BDF Technical Area" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:url a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "url" ;
-    rdfs:range linkml:Uriorcurie ;
-    skos:definition "URL for the tool" ;
-    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema> .
-
-BDFT:BDFTechnicalArea a owl:Class,
-        linkml:EnumDefinition ;
-    owl:unionOf ( <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA1> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA2> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA3> ) ;
-    linkml:permissible_values <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA1>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA2>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA3> .
 
 <https://w3id.org/ARPA-H-BDF/bdfkb-schema> a owl:Ontology ;
     rdfs:label "bdfkb-schema" ;
@@ -250,22 +12,71 @@ BDFT:BDFTechnicalArea a owl:Class,
     rdfs:seeAlso <https://ARPA-H-BDF.github.io/bdfkb-schema> ;
     skos:definition "Schema to describe BDF Toolbox entities and the relationships between them." .
 
-BDFT:BDFPerformerTeam a owl:Class,
-        linkml:EnumDefinition ;
-    owl:unionOf ( <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NEU> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_MIT> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NYU> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_Jataware> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Netrias> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#N3C> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#BDC> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#CRA> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#DNAHIVE> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#HMS> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Stanford> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#UAB> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ICF> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#SageBio> <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Insilicom> ) ;
-    linkml:permissible_values <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_Jataware>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_MIT>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NEU>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NYU>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#BDC>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#CRA>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#DNAHIVE>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#HMS>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ICF>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Insilicom>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#N3C>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Netrias>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#SageBio>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Stanford>,
-        <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#UAB> .
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/Tool> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Tool" ;
+    rdfs:subClassOf <https://w3id.org/ARPA-H-BDF/bdfkb-schema/NamedThing> ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdflb-schema-tool> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/type> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type" ;
+    rdfs:domain <https://w3id.org/ARPA-H-BDF/bdfkb-schema/NamedThing> ;
+    skos:definition "A generic slot for any label corresponding to the label for an entity type associated to the class." ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema-core> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/NamedThing> a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NamedThing" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/description> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/ARPA-H-BDF/bdfkb-schema/description> ] ;
+    skos:definition "A generic grouping for any identifiable entity" ;
+    skos:exactMatch <http://schema.org/thing> ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema-core> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/description> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable description for a thing." ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema-core> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "A unique identifier for a thing." ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema-core> .
+
+<https://w3id.org/ARPA-H-BDF/bdfkb-schema/name> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable name for a thing." ;
+    skos:inScheme <https://w3id.org/ARPA-H-BDF/bdfkb-schema-core> .
 

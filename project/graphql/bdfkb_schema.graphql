@@ -11,14 +11,5 @@ type Tool
     id: Uriorcurie!
     name: String
     description: String
-    developerTeam: BDFPerformerTeam
-    technicalArea: BDFTechnicalArea
-    keywords: [String]
-    url: Uriorcurie
-  }
-
-type ToolCollection
-  {
-    entries: [Tool]
   }
 

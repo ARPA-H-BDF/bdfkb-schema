@@ -8,19 +8,9 @@ message NamedThing
   string name = 0
   string description = 0
  }
-// Represents a Tool
 message Tool
  {
   uriorcurie id = 0
   string name = 0
   string description = 0
-  bDFPerformerTeam developerTeam = 0
-  bDFTechnicalArea technicalArea = 0
- repeated  string keywords = 0
-  uriorcurie url = 0
- }
-// A holder for Tool objects
-message ToolCollection
- {
- repeated  tool entries = 0
  }

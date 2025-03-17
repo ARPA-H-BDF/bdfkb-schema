@@ -49,42 +49,16 @@ linkml:Sparqlpath xsd:string
        (  $<NamedThing_tes> (  schema1:name @linkml:String ? ;
              schema1:description @linkml:String ?
           ) ;
-          rdf:type [ schema1:Thing ]
+          rdf:type [ schema1:thing ]
        )
     } OR @<Tool>
 )
 
 <Tool> CLOSED {
     (  $<Tool_tes> (  &<NamedThing_tes> ;
-          rdf:type [ schema1:Thing ] ? ;
-          <developer_team> [ <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NEU>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_MIT>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_NYU>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ASKEM_Jataware>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Netrias>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#N3C>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#BDC>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#CRA>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#DNAHIVE>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#HMS>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Stanford>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#UAB>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#ICF>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#SageBio>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFPerformerTeam#Insilicom> ] ? ;
-          <technical_area> [ <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA1>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA2>
-             <https://w3id.org/ARPA-H-BDF/bdfkb-schema/BDFTechnicalArea#TA3> ] ? ;
-          <keywords> @linkml:String * ;
-          <url> @linkml:Uriorcurie ?
+          rdf:type [ schema1:thing ] ?
        ) ;
        rdf:type [ <Tool> ]
-    )
-}
-
-<ToolCollection> CLOSED {
-    (  $<ToolCollection_tes> <entries> @<Tool> * ;
-       rdf:type [ <ToolCollection> ] ?
     )
 }
 

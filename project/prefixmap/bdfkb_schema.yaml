@@ -1,11 +1,8 @@
 {
-   "BDFT": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/",
-   "PATO": "http://purl.obolibrary.org/obo/PATO_",
-   "biolink": "https://w3id.org/biolink/",
-   "example": "https://example.org/",
+   "bdfkbs": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/",
    "linkml": "https://w3id.org/linkml/",
    "schema": "http://schema.org/",
    "NamedThing": {
-      "@id": "schema:Thing"
+      "@id": "schema:thing"
    }
 }
