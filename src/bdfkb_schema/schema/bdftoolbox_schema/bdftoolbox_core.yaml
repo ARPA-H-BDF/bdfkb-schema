@@ -1,0 +1,44 @@
+name: bdftoolbox-schema-core
+id: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema-core
+
+prefixes:
+  bdfts: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+default_prefix: bdfts
+
+imports:
+- linkml:types
+
+
+classes:
+
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+    - id
+    - name
+    - description
+
+
+slots:
+  id:
+    identifier: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+    description: A unique identifier for a thing.
+    required: true
+  type:
+    description: >-
+      A generic slot for any label corresponding to the label
+      for an entity type associated to the class.
+    domain: NamedThing
+  name:
+    slot_uri: schema:name
+    description: A human-readable name for a thing.
+    range: string
+  description:
+    slot_uri: schema:description
+    description: A human-readable description for a thing.
+    range: string

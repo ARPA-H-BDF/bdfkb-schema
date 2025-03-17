@@ -1,0 +1,41 @@
+name: bdftoolbox-performer
+id: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema-performer
+
+prefixes:
+  bdfts: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema/
+  linkml: https://w3id.org/linkml/
+default_prefix: bdfts
+
+
+imports:
+- linkml:types
+- bdftoolbox_core
+
+
+classes:
+
+  Performer:
+    # is_a: NamedThing # for some reason including this causes linkml-validate to expect a string instead of object
+    description: Attributes of a BDF Toolbox program performer.
+    slots:
+    - portfolio_label
+    - project_title
+    - award_agency
+    - award_prime
+
+
+slots:
+  portfolio_label:
+    description: BDF program identifying label for performer.
+    range: string
+    required: true
+  project_title:
+    description: Title of awarded project.
+    range: string
+  award_agency:
+    description: Federal agency managing award.
+    range: string
+  award_prime:
+    description: Prime contract holder institution or company.
+    range: string
+

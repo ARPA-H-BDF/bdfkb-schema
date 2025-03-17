@@ -1,0 +1,57 @@
+name: bdftoolbox-tool
+id: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema-tool
+
+prefixes:
+  bdfts: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema/
+  linkml: https://w3id.org/linkml/
+default_prefix: bdfts
+
+
+imports:
+- linkml:types
+- bdftoolbox_core
+- bdftoolbox_performer
+
+
+classes:
+
+  Tool:
+    is_a: NamedThing
+    description: Attributes of a BDF Toolbox tool.
+    slots:
+    - keywords
+    - technical_area
+    - performer
+
+  # ToolCollection:
+  #   tree_root: true
+  #   description: >-
+  #     A holder for Tool objects
+  #   attributes:
+  #     entries:
+  #       range: Tool
+  #       multivalued: true
+  #       inlined: true
+
+
+slots:
+  technical_area:
+    description: BDF Technical Area
+    range: TechnicalAreaOption
+  keywords:
+    description: Key words describing a thing
+    range: string
+    multivalued: true
+  performer:
+    description: BDF program performer associated with the tool.
+    range: Performer
+    required: true
+
+
+enums:
+  TechnicalAreaOption:
+    permissible_values:
+      TA1: {}
+      TA2: {}
+      TA3: {}
+      TA4: {}

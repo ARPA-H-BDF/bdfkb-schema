@@ -1,0 +1,14 @@
+name: bdftoolbox-schema
+id: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+
+prefixes:
+  bdfts: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+default_prefix: bdfts
+
+imports:
+- linkml:types
+- bdftoolbox_core
+- bdftoolbox_tool
+- bdftoolbox_performer
