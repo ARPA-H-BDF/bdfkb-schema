@@ -8,7 +8,8 @@ default_prefix: biotoolsSchema
 
 imports:
 - linkml:types
-- biotoolsSchema_types
+- biotoolsSchema_core
+
 
 classes:
 
