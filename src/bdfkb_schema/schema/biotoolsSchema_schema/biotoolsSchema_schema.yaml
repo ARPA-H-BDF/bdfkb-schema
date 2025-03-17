@@ -1,0 +1,21 @@
+name: biotoolsSchema
+id: https://biotoolsschema.readthedocs.io
+
+prefixes:
+  biotoolsSchema: https://biotoolsschema.readthedocs.io/
+  linkml: https://w3id.org/linkml/
+default_prefix: biotoolsSchema
+
+
+imports:
+- linkml:types
+- biotoolsSchema_core
+- biotoolsSchema_labels
+- biotoolsSchema_function
+- biotoolsSchema_link
+- biotoolsSchema_download
+- biotoolsSchema_documentation
+- biotoolsSchema_relation
+- biotoolsSchema_publication
+- biotoolsSchema_credit
+- biotoolsSchema_tool
