@@ -1,0 +1,510 @@
+name: bdftoolbox-schema
+id: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+prefixes:
+  bdfts:
+    prefix_prefix: bdfts
+    prefix_reference: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+  xsd:
+    prefix_prefix: xsd
+    prefix_reference: http://www.w3.org/2001/XMLSchema#
+  shex:
+    prefix_prefix: shex
+    prefix_reference: http://www.w3.org/ns/shex#
+default_prefix: bdfts
+types:
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "boolean".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    description: A time object represents a (local) time of day, independent of any
+      particular day
+    notes:
+    - URI is dateTime because OWL reasoners do not work with straight date or time
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "time".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Time
+    base: XSDTime
+    uri: xsd:time
+    repr: str
+  date:
+    name: date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+    - URI is dateTime because OWL reasoners don't work with straight date or time
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "date".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    description: The combination of a date and time
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "datetime".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    exact_mappings:
+    - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    description: Either a date or a datetime
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "date_or_datetime".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "curie".
+    comments:
+    - in RDF serializations this MUST be expanded to a URI
+    - in non-RDF serializations MAY be serialized as the compact representation
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uri".
+    comments:
+    - in RDF serializations a slot with range of uri is treated as a literal or type
+      xsd:anyURI unless it is an identifier or a reference to an identifier, in which
+      case it is translated directly to a node
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    close_mappings:
+    - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    description: Prefix part of CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "ncname".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "objectidentifier".
+    comments:
+    - Used for inheritance and type checking
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "nodeidentifier".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+  jsonpointer:
+    name: jsonpointer
+    conforms_to: https://datatracker.ietf.org/doc/html/rfc6901
+    description: A string encoding a JSON Pointer. The value of the string MUST conform
+      to JSON Point syntax and SHOULD dereference to a valid object within the current
+      instance document when encoded in tree form.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "jsonpointer".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: str
+    uri: xsd:string
+    repr: str
+  jsonpath:
+    name: jsonpath
+    conforms_to: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+    description: A string encoding a JSON Path. The value of the string MUST conform
+      to JSON Point syntax and SHOULD dereference to zero or more valid objects within
+      the current instance document when encoded in tree form.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "jsonpath".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: str
+    uri: xsd:string
+    repr: str
+  sparqlpath:
+    name: sparqlpath
+    conforms_to: https://www.w3.org/TR/sparql11-query/#propertypaths
+    description: A string encoding a SPARQL Property Path. The value of the string
+      MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects
+      within the current instance document when encoded as RDF.
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "sparqlpath".
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    base: str
+    uri: xsd:string
+    repr: str
+enums:
+  TechnicalAreaOption:
+    name: TechnicalAreaOption
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    permissible_values:
+      TA1:
+        text: TA1
+      TA2:
+        text: TA2
+      TA3:
+        text: TA3
+      TA4:
+        text: TA4
+slots:
+  id:
+    name: id
+    description: A unique identifier for a thing.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    slot_uri: schema:identifier
+    identifier: true
+    domain_of:
+    - NamedThing
+    range: uriorcurie
+    required: true
+  type:
+    name: type
+    description: A generic slot for any label corresponding to the label for an entity
+      type associated to the class.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain: NamedThing
+  name:
+    name: name
+    description: A human-readable name for a thing.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    slot_uri: schema:name
+    domain_of:
+    - NamedThing
+    range: string
+  description:
+    name: description
+    description: A human-readable description for a thing.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    slot_uri: schema:description
+    domain_of:
+    - NamedThing
+    range: string
+  portfolio_label:
+    name: portfolio_label
+    description: BDF program identifying label for performer.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Performer
+    range: string
+    required: true
+  project_title:
+    name: project_title
+    description: Title of awarded project.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Performer
+    range: string
+  award_agency:
+    name: award_agency
+    description: Federal agency managing award.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Performer
+    range: string
+  award_prime:
+    name: award_prime
+    description: Prime contract holder institution or company.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Performer
+    range: string
+  technical_area:
+    name: technical_area
+    description: BDF Technical Area
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: TechnicalAreaOption
+  keywords:
+    name: keywords
+    description: Key words describing a thing
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: string
+    multivalued: true
+  performer:
+    name: performer
+    description: BDF program performer associated with the tool.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: Performer
+    required: true
+classes:
+  NamedThing:
+    name: NamedThing
+    description: A generic grouping for any identifiable entity
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    slots:
+    - id
+    - name
+    - description
+    attributes:
+      id:
+        name: id
+        description: A unique identifier for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:identifier
+        identifier: true
+        alias: id
+        owner: NamedThing
+        domain_of:
+        - NamedThing
+        range: uriorcurie
+        required: true
+      name:
+        name: name
+        description: A human-readable name for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:name
+        alias: name
+        owner: NamedThing
+        domain_of:
+        - NamedThing
+        range: string
+      description:
+        name: description
+        description: A human-readable description for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:description
+        alias: description
+        owner: NamedThing
+        domain_of:
+        - NamedThing
+        range: string
+    class_uri: schema:Thing
+  Performer:
+    name: Performer
+    description: Attributes of a BDF Toolbox program performer.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    slots:
+    - portfolio_label
+    - project_title
+    - award_agency
+    - award_prime
+    attributes:
+      portfolio_label:
+        name: portfolio_label
+        description: BDF program identifying label for performer.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: portfolio_label
+        owner: Performer
+        domain_of:
+        - Performer
+        range: string
+        required: true
+      project_title:
+        name: project_title
+        description: Title of awarded project.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: project_title
+        owner: Performer
+        domain_of:
+        - Performer
+        range: string
+      award_agency:
+        name: award_agency
+        description: Federal agency managing award.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: award_agency
+        owner: Performer
+        domain_of:
+        - Performer
+        range: string
+      award_prime:
+        name: award_prime
+        description: Prime contract holder institution or company.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: award_prime
+        owner: Performer
+        domain_of:
+        - Performer
+        range: string
+  Tool:
+    name: Tool
+    description: Attributes of a BDF Toolbox tool.
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    is_a: NamedThing
+    slots:
+    - keywords
+    - technical_area
+    - performer
+    attributes:
+      keywords:
+        name: keywords
+        description: Key words describing a thing
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: keywords
+        owner: Tool
+        domain_of:
+        - Tool
+        range: string
+        multivalued: true
+      technical_area:
+        name: technical_area
+        description: BDF Technical Area
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: technical_area
+        owner: Tool
+        domain_of:
+        - Tool
+        range: TechnicalAreaOption
+      performer:
+        name: performer
+        description: BDF program performer associated with the tool.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        alias: performer
+        owner: Tool
+        domain_of:
+        - Tool
+        range: Performer
+        required: true
+      id:
+        name: id
+        description: A unique identifier for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:identifier
+        identifier: true
+        alias: id
+        owner: Tool
+        domain_of:
+        - NamedThing
+        range: uriorcurie
+        required: true
+      name:
+        name: name
+        description: A human-readable name for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:name
+        alias: name
+        owner: Tool
+        domain_of:
+        - NamedThing
+        range: string
+      description:
+        name: description
+        description: A human-readable description for a thing.
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        slot_uri: schema:description
+        alias: description
+        owner: Tool
+        domain_of:
+        - NamedThing
+        range: string
+source_file: src/bdfkb_schema/schema/bdftoolbox_schema/bdftoolbox_schema.yaml
