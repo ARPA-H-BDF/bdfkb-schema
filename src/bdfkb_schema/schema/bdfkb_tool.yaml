@@ -1,0 +1,19 @@
+name: bdfkb-tool
+id: https://w3id.org/ARPA-H-BDF/bdflb-schema-tool
+
+prefixes:
+  bdfkbs: https://w3id.org/ARPA-H-BDF/bdfkb-schema/
+  linkml: https://w3id.org/linkml/
+default_prefix: bdfkbs
+
+
+imports:
+- linkml:types
+- bdfkb_core
+# - bdftoolbox_schema
+
+
+classes:
+
+  Tool:
+    is_a: NamedThing
