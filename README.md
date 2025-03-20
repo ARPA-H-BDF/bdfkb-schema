@@ -27,6 +27,24 @@ Use the `make` command to generate project artefacts:
 * `make deploy`: deploys site
 </details>
 
+<details>
+<summary>uv setup</summary>
+
+Installation:
+* With uv installed, run `uv run main.py`
+  * This will install all dependencies & use required Python version
+* Install linkml tools (if not already installed): `uv tool install linkml`
+
+</details>
+
+<details>
+<summary>ER Diagram Generation</summary>
+
+Create ER Diagram with Mermaid:
+* `gen-erdiagram ./src/bdfkb_schema/schema/sample_import_schema/custom-llm-tool.yaml > mermaid.md`
+
+</details>
+
 ## Credits
 
 This project was made with

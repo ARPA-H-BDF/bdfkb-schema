@@ -1,0 +1,39 @@
+# custom-llm-tool.yaml
+---
+id: http://example.org/llmtool
+name: custom-llmtool
+imports:
+  - llm-tool
+prefixes:
+  custom-llmtool: http://example.org/custom-llmtool/
+  llmtool: http://example.org/llmtool/
+  common: http://example.org/common/
+
+classes:
+  # You can extend the LLMTool class
+  CustomExtendedToolClass:
+    is_a: LLMTool
+    slots:
+      - connection-2
+      - nickname
+      - custom-metric-1
+      - custom-metric-2
+
+
+slots:
+  # Here will have both your common tool attributes, 
+  # LLM tool attributes, and any other slots you which to define
+  nickname:
+    description: Project nickname
+    range: string
+  custom-metric-1:
+    description: Field specific to one class of tool
+    range: string
+    required: true
+  custom-metric-2:
+    description: Field specific to another class of tool
+    range: number
+    required: true
+  connection-2:
+    description: LLM tool connection
+    range: LLMTool

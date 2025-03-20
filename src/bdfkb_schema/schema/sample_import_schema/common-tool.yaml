@@ -1,0 +1,26 @@
+# common-tool.yaml
+---
+id: http://example.org/common
+name: common-tool
+prefixes:
+  common: http://example.org/common/
+
+classes:
+  Common-Tool:
+    description: Common Tool class (shared class)
+    slots:
+      - tool-id
+      - title
+      - desc
+
+slots:
+  tool-id:
+    description: Unique identifier
+    identifier: true
+    range: string
+  title:
+    description: Tool name
+    range: string
+  desc:
+    description: Tool description
+    range: string

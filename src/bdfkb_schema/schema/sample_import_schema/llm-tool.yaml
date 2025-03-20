@@ -1,0 +1,34 @@
+# llm-tool.yaml
+---
+id: http://example.org/llmtool
+name: llmtool
+imports:
+  - common-tool
+prefixes:
+  llmtool: http://example.org/llmtool/
+  common: http://example.org/common/
+
+classes:
+  LLMTool:
+    description: An LLM-focused tool
+    is_a: Common-Tool
+    attributes:
+      llm_offered:
+        description: LLMs offered via tool
+        range: LLM-Type
+        multivalued: true
+    slots:
+      - connection
+
+slots:
+  connection:
+    description: Common tool connection
+    range: Common-Tool
+
+
+enums:
+  LLM-Type:
+    permissible_values:
+      gpt3:
+      gpt4:
+      claude-sonnett:
