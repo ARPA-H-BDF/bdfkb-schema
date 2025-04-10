@@ -321,6 +321,14 @@ slots:
     domain_of:
     - Performer
     range: string
+  performer_type:
+    name: performer_type
+    description: Type of performer
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Performer
+    range: PerformerTypeOption
+    required: true
   award_prime:
     name: award_prime
     description: Prime contract holder institution or company.
@@ -427,6 +435,7 @@ classes:
     - project_title
     - award_agency
     - award_prime
+    - performer_type
     attributes:
       portfolio_label:
         name: portfolio_label
@@ -465,6 +474,14 @@ classes:
         domain_of:
         - Performer
         range: string
+      performer_type:
+        name: performer_type
+        description: Type of performer
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        domain_of:
+        - Performer
+        range: PerformerTypeOption
+        required: true
   Tool:
     name: Tool
     description: Attributes of a BDF Toolbox tool.

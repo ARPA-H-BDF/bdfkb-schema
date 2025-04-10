@@ -22,6 +22,7 @@ classes:
     - project_title
     - award_agency
     - award_prime
+    - performer_type
 
 
 slots:
@@ -38,4 +39,15 @@ slots:
   award_prime:
     description: Prime contract holder institution or company.
     range: string
+  performer_type:
+    description: Tyoe of performer
+    range: PerformerTypeOption
+    required: true
+
+
+enums:
+  PerformerTypeOption:
+    permissible_values:
+      Performer: {}
+      FFRDC: {}
 
