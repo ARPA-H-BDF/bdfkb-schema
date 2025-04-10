@@ -12,6 +12,13 @@ imports:
 - bdftoolbox_core
 - bdftoolbox_performer
 
+types:
+  url:
+    uri: xsd:string
+    base: str
+    pattern: '^https?://[^\\s]+$'
+    description: A valid HTTP or HTTPS URL
+
 
 classes:
 
@@ -22,6 +29,9 @@ classes:
     - keywords
     - technical_area
     - performer
+    - email
+    - repo_url
+    - tool_homepage
 
   # ToolCollection:
   #   tree_root: true
@@ -46,6 +56,17 @@ slots:
     description: BDF program performer associated with the tool.
     range: Performer
     required: true
+  email:
+    description: Email(s) of contact person(s)
+    range: string
+    multivalued: true
+    required: true
+  repo_url:
+    description: Public repository URL
+    range: url
+  tool_homepage:
+        description: Public homepage URL
+        range: url
 
 
 enums:

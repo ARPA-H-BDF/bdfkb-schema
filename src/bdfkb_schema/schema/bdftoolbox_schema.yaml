@@ -177,6 +177,11 @@ types:
     base: URI
     uri: xsd:anyURI
     repr: str
+  url:
+    uri: xsd:string
+    base: str
+    pattern: '^https?://[^\\s]+$'
+    description: A valid HTTP or HTTPS URL
   ncname:
     name: ncname
     description: Prefix part of CURIE
@@ -346,6 +351,30 @@ slots:
     - Tool
     range: Performer
     required: true
+  email:
+    name: email
+    description: Email(s) of contact person(s)
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: string
+    multivalued: true
+    required: true
+  repo_url:
+    name: repo_url
+    description: Public repository URL
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: url
+  tool_homepage:
+    name: tool_homepage
+    description: Public homepage URL
+    from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+    domain_of:
+    - Tool
+    range: url
+
 classes:
   NamedThing:
     name: NamedThing
@@ -445,7 +474,33 @@ classes:
     - keywords
     - technical_area
     - performer
+    - email
+    - repo_url
+    - tool_homepage
     attributes:
+      email:
+        name: email
+        description: Email(s) of contact person(s)
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        domain_of:
+        - Tool
+        range: string
+        multivalued: true
+        required: true
+      repo_url:
+        name: repo_url
+        description: Public repository URL
+            from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        domain_of:
+        - Tool
+        range: url
+      tool_homepage:
+        name: tool_homepage
+        description: Public homepage URL
+        from_schema: https://w3id.org/ARPA-H-BDF/bdftoolbox-schema
+        domain_of:
+        - Tool
+        range: url
       keywords:
         name: keywords
         description: Key words describing a thing
