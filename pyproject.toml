@@ -7,6 +7,15 @@ license = "Apache Software License 2.0"
 readme = "README.md"
 include = ["README.md", "src/bdfkb_schema/schema", "project"]
 
+[project]
+name = "bdfkb_schema"
+version = "0.1.0"
+description = "Schema to describe BDF Toolbox entities and the relationships between them."
+authors = [{name = "James Eddy", email = "james.a.eddy@gmail.com>"}]
+license = "Apache Software License 2.0"
+readme = "README.md"
+requires-python = ">=3.9"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.1.24"

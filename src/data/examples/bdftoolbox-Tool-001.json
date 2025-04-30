@@ -1,0 +1,17 @@
+{
+    "id": "BDFT:Tool001",
+    "name": "BDF Tool Foo",
+    "description": "AI tool for automated data extraction.",
+    "technical_area": "TA1",
+    "keywords": ["AI", "data extraction"],
+    "performer": {
+        "portfolio_label": "PerformerA",
+        "project_title": "Performer Project Foo",
+        "award_agency": "ARPA-H",
+        "award_prime": "University of Foo",
+        "performer_type": "Performer"
+    },
+    "email": ["foo@example.com"],
+    "repo_url": "https://github.com",
+    "tool_homepage": "https://www.example.com"
+}

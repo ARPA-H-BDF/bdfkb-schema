@@ -14,4 +14,7 @@ performer:
   project_title: Performer Project Foo
   award_agency: ARPA-H
   award_prime: University of Foo
+  performer_type: Performer
+email:
+  - foo@example.com
 # url: https://github.com/ARPA-H-BDF/BDFToolFoo
