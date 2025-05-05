@@ -1,8 +1,0 @@
-{
-   "bdfkbs": "https://w3id.org/ARPA-H-BDF/bdfkb-schema/",
-   "linkml": "https://w3id.org/linkml/",
-   "schema": "http://schema.org/",
-   "NamedThing": {
-      "@id": "schema:thing"
-   }
-}
