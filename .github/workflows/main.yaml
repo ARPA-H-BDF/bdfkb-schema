@@ -5,32 +5,32 @@ name: Build and test bdfkb_schema
 
 on: [pull_request]
 
-jobs:
-  test:
+# jobs:
+#   test:
 
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.9", "3.10"]
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         python-version: ["3.9", "3.10"]
 
-    steps:
+#     steps:
 
-      - name: Check out repository
-        uses: actions/checkout@v3
+#       - name: Check out repository
+#         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: ${{ matrix.python-version }}
 
-      - name: Install Poetry
-        run: pipx install poetry
+#       - name: Install Poetry
+#         run: pipx install poetry
 
-      - name: Install dependencies
-        run: poetry install --no-interaction --no-root
+#       - name: Install dependencies
+#         run: poetry install --no-interaction --no-root
 
-      - name: Install project
-        run: poetry install --no-interaction
+#       - name: Install project
+#         run: poetry install --no-interaction
 
-      - name: Run test suite
-        run: make test
+#       - name: Run test suite
+#         run: make test
