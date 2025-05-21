@@ -1,6 +1,6 @@
 # bdfkb-schema
 
-Schema to describe BDF Toolbox entities and the relationships between them.
+Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and related entities as well as the relationships between them.
 
 ## Website
 
@@ -52,4 +52,4 @@ Create ER Diagram with Mermaid:
 ## Credits
 
 This project was made with
-[linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
+[linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter), however much of what the cookie cutter provides is not needed here and thus removed. We opted to \[mostly\] stick with cookiecutter template so this would be familiar to someone already familiar with the LinkML project (and template).
