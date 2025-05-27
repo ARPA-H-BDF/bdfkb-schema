@@ -1,6 +1,6 @@
 # bdfkb-schema
 
-Schema to describe BDF Toolbox entities and the relationships between them.
+Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and related entities as well as the relationships between them.
 
 ## Website
 
@@ -8,22 +8,19 @@ Schema to describe BDF Toolbox entities and the relationships between them.
 
 ## Repository Structure
 
-* [examples/](examples/) - example data
-* [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
   * [bdfkb_schema](src/bdfkb_schema)
     * [schema](src/bdfkb_schema/schema) -- LinkML schema
       (edit this)
-      * [biotoolsSchema_schema](src/bdfkb_schema/schema/biotoolsSchema_schema/) -- Independent biotoolsSchema LinkML rep
-        * Modular schema in yaml
-        * LinkML rep created using [schema-automator](https://github.com/linkml/schema-automator)
-        * Uses [JSON Schema version](https://github.com/bio-tools/biotoolsSchema/tree/main/jsonschema) of biotoolsSchema
-        * Example validation script: `linkml-validate -s src/bdfkb_schema/schema/biotoolsSchema_schema/biotoolsSchema_schema.yaml src/data/examples/bioTools-Tool-001.yaml --target-class Tool`
-      * [bdftoolbox_schema](src/bdfkb_schema/schema/bdftoolbox_schema/) -- BDF opinionated schema for describing tools in the BDF toolbox
-        * Profiles schemas for different tool classifications
-    * [datamodel](src/bdfkb_schema/datamodel) -- generated
-      Python datamodel
-* [tests/](tests/) - Python tests
+* [draft/](draft/) - draft / working versions of LinkML sub-schemas
+  * [biotoolsSchema_schema](src/bdfkb_schema/schema/biotoolsSchema_schema/) -- Independent biotoolsSchema LinkML rep
+    * Modular schema in yaml
+    * LinkML rep created using [schema-automator](https://github.com/linkml/schema-automator)
+    * Uses [JSON Schema version](https://github.com/bio-tools/biotoolsSchema/tree/main/jsonschema) of biotoolsSchema
+    * Example validation script: `linkml-validate -s src/bdfkb_schema/schema/biotoolsSchema_schema/biotoolsSchema_schema.yaml src/data/examples/bioTools-Tool-001.yaml --target-class Tool`
+  * [bdftoolbox_schema](src/bdfkb_schema/schema/bdftoolbox_schema/) -- BDF opinionated schema for describing tools in the BDF toolbox
+    * Profiles schemas for different tool classifications
+
 
 ## Developer Documentation
 
@@ -55,4 +52,4 @@ Create ER Diagram with Mermaid:
 ## Credits
 
 This project was made with
-[linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter).
+[linkml-project-cookiecutter](https://github.com/linkml/linkml-project-cookiecutter), however much of what the cookie cutter provides is not needed here and thus removed. We opted to \[mostly\] stick with cookiecutter template so this would be familiar to someone already familiar with the LinkML project (and template).
