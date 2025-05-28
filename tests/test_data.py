@@ -23,11 +23,11 @@ class TestData(unittest.TestCase):
             
             # Check if validation failed
             if report.results:
-                print(f"INVALID - Found validation errors in {SCHEMA_FILE}:")
+                print(f"INVALID - Found validation errors in {path}:")
                 for result in report.results:
                     print(f"- {result.message}")
-                raise ValueError(f'Validation failed for {SCHEMA_FILE} - see errors above')
+                raise ValueError(f'Validation failed for {path} - see errors above')
             else:
-                print(f"VALID - {SCHEMA_FILE} passed validation")
+                print(f"VALID - {path} passed validation")
             
             assert report.results == []
