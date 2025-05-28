@@ -6,7 +6,7 @@ import unittest
 from linkml.validator import validate_file
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
-DATA_DIR = os.path.join(ROOT, "src", "data", "examples")
+DATA_DIR = os.path.join(ROOT, "src", "data", "examples", "valid")
 
 EXAMPLE_FILES = glob.glob(os.path.join(DATA_DIR, '*.yaml'))
 SCHEMA_FILE = os.path.join(ROOT, "src", "bdfkb_schema", "schema", "bdfkb_schema.yaml") 
