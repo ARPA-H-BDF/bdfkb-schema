@@ -1,8 +1,12 @@
-id: https://example.org/system-metadata-schema
-version: 0.1.0 
-name: system-metadata-schema
-title: System Metadata Schema
-description: Schema for describing system metadata including LLM usage, cloud platform, inputs, outputs, collaborations, and funding information
+id: https://example.org/bdfkb-schema
+name: bdfkb-schema
+title: bdfkb-schema
+description: |-
+  Schema to describe BDF Toolbox entities and the relationships between them. 
+  Current scope covers system metadata including LLM usage, cloud platform, 
+  inputs, outputs, collaborations, and funding information.
+license: Apache Software License 2.0
+version: 0.1.0
 
 prefixes:
   linkml: https://w3id.org/linkml/
