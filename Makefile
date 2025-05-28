@@ -122,10 +122,12 @@ gen-examples:
 	cp src/data/examples/* $(EXAMPLEDIR)
 
 # generates all project files
-
 gen-project: $(PYMODEL)
 	$(RUN) gen-project ${CONFIG_YAML} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
+# Generate Pydantic classes
+gen-pydantic:
+	$(RUN) gen-pydantic $(SOURCE_SCHEMA_PATH) > src/$(SCHEMA_NAME)/datamodel/$(SCHEMA_NAME)_pydantic.py
 
 # non-empty arg triggers owl (workaround https://github.com/linkml/linkml/issues/1453)
 ifneq ($(strip ${GEN_OWL_ARGS}),)
