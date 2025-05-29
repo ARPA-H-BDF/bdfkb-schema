@@ -32,12 +32,39 @@ Use the `make` command to generate project artefacts:
 </details>
 
 <details>
+<summary>poetry setup (recommended)</summary>
+
+Create virtual env and install dependencies:
+
+`poetry install`
+
+</details>
+
+<details>
 <summary>uv setup</summary>
 
 Installation:
-* With uv installed, run `uv run main.py`
+* `uv run main.py`
   * This will install all dependencies & use required Python version
-* Install linkml tools (if not already installed): `uv tool install linkml`
+* Install linkml tools (if not already installed): 
+  * `uv tool install linkml`
+
+</details>
+
+<details>
+<summary>conda setup</summary>
+
+1. Create conda venv:
+
+  - `conda create -n "venv" python=3.9`
+
+2. Activate venv:
+
+  - `conda activate venv`
+
+3. Install dependencies:
+
+  - `pip install .`
 
 </details>
 
