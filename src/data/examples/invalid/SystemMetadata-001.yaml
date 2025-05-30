@@ -1,0 +1,152 @@
+version: "v1.2.3"
+
+tool:
+  name: False
+
+domains:
+  - "oncology"
+  - "clinical-decision-support"
+  - "patient-care"
+
+llm:
+  usesLlm: true
+  modelsSupported:
+    - "gpt4o"
+    - "claude3-5sonnet"
+    - "gemini"
+  modelsRequired:
+    - "gpt4o"
+  reasonsForRequirement:
+    - "performance"
+    - "cost"
+  bringOwnKey: false
+
+cloud:
+  platform: "aws"
+  lastAuditDate: "2024-12-15T10:30:00Z"
+
+input:
+  - name: "Electronic Health Records"
+    dataCategory: "clinical-phenotype"
+    dataClass: "structured"
+    dataType: "clinical-ehr"
+    dataSubType: "patient-demographics"
+    dataStandard:
+      - "FHIR"
+      - "OMOP"
+    format:
+      - "json"
+      - "csv"
+    proprietary: false
+    source: "https://api.hospital-system.org/fhir"
+  
+  - name: "Medical Literature"
+    dataCategory: "clinical-phenotype"
+    dataClass: "unstructured-text"
+    dataType: "clinical-ehr"
+    dataStandard:
+      - "None"
+    format:
+      - "pdf"
+      - "txt"
+    proprietary: false
+
+output:
+  - name: "Treatment Recommendations"
+    dataCategory: "clinical-phenotype"
+    dataClass: "structured"
+    dataType: "clinical-ehr"
+    dataStandard:
+      - "FHIR"
+    format:
+      - "json"
+    proprietary: false
+  
+  - name: "Risk Assessment Reports"
+    dataCategory: "clinical-phenotype"
+    dataClass: "document"
+    dataType: "clinical-ehr"
+    dataStandard:
+      - "None"
+    format:
+      - "pdf"
+      - "docx"
+    proprietary: false
+
+collaborations:
+  - name: "Hospital Integration"
+    description: "Integration with major hospital EHR systems"
+    tools:
+      - "Epic"
+      - "Cerner"
+      - "Allscripts"
+    collaboration_purpose: "Seamless clinical workflow integration"
+  
+  - name: "Research Partnership"
+    description: "Collaboration with cancer research institutions"
+    tools:
+      - "REDCap"
+      - "OnCore"
+    collaboration_purpose: "Clinical trial patient matching and recruitment"
+
+funding:
+  source: "National Institutes of Health"
+  agreement: "R01CA123456"
+  link: "https://reporter.nih.gov/project-details/12345678"
+
+maturity:
+  beginning_maturity: 3
+  current_maturity: 7
+  final_maturity: 9
+
+license:
+  license_type: "Apache-2.0"
+  link: "https://github.com/healthtech/clinical-insight-ai/blob/main/LICENSE"
+  notes: "Open source with commercial support available"
+
+publication:
+  - type: "journal-article"
+    tool_version: "v1.0.0"
+    doi: "10.1038/s41591-024-12345-6"
+    pmid: "38123456"
+    pmcid: "PMC9876543"
+  
+  - type: "conference-paper"
+    tool_version: "v1.1.0"
+    url: "https://proceedings.mlr.press/v123/smith21a.html"
+
+credit:
+  - name: "Dr. Sarah Johnson"
+    email: 
+      - "sarah.johnson@healthtech.org"
+    url: "https://healthtech.org/team/sarah-johnson"
+    orcidid: "ORCID:0000-0002-1234-5678"
+    role: "Developer"
+    org: "HealthTech Research Institute"
+    note: "Lead developer and clinical domain expert"
+  
+  - name: "Michael Chen"
+    email:
+      - "m.chen@healthtech.org"
+    role: "Maintainer"
+    org: "HealthTech Research Institute"
+    note: "Software architecture and DevOps"
+
+target_users:
+  primary_user:
+    user_type: "clinician"
+    technical_literacy_level:
+      - "intermediate"
+    biomedical_literacy_level:
+      - "expert"
+  
+  secondary_user:
+    user_type: "researcher"
+    technical_literacy_level:
+      - "advanced"
+    biomedical_literacy_level:
+      - "expert"
+
+media:
+  - link: "https://clinicalinsight.healthtech.org/demo-video"
+  - link: "https://clinicalinsight.healthtech.org/screenshots"

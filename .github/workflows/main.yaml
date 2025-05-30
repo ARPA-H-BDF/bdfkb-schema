@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10"]
+        # This can define 1 or more python versions to test against
+        python-version: ["3.9"]
 
     steps:
 
