@@ -22,30 +22,7 @@ Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and
 
 ## Developer Documentation
 
-More robust developer documentation is planned, see #14. In the meantime, here are some helpful commands: 
-
-### Using `make`
-
-The LinkML cookiecutter uses `make` so this is the easiest way to get started. Here are some examples: 
-
-- Test all things `make test`
-- Test schema `make test-schema`
-- Generate pydantic classes `make gen-pydantic`
-- And more! 
-
-### Using `poetry` & `linkml` tools
-
-Under the hood, the Makefile is basically running python and using the `linkml` generator tools. So you can run the same commands directly if you choose. 
-
-- Run tests `poetry run python -m unittest discover`
-- Generate mermaid diagram of schema `gen-erdiagram -f mermaid src/bdfkb_schema/schema/bdfkb_schema.yaml > mermaid.md`
-- And more! 
-  
-### Using `uv`
-
-`uv` is a modern tool for python that aims to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more. Learn more here https://github.com/astral-sh/uv
-
-Some of team uses `uv`, so you might find `uv` bits scattered around this project. However, since the LinkML cookiecutter project still uses poetry, this project is not yet fully embracing `uv`. Install `uv` and then `uv tool install linkml` and explore at your own risk.
+### Quick-start setup:
 <details>
 Use the `make` command to generate project artefacts:
 
@@ -97,6 +74,29 @@ Create ER Diagram with Mermaid:
 * `gen-erdiagram ./src/bdfkb_schema/schema/sample_import_schema/custom-llm-tool.yaml > mermaid.md`
 
 </details>
+
+### Using `make`
+
+The LinkML cookiecutter uses `make` so this is the easiest way to get started. Here are some examples: 
+
+- Test all things `make test`
+- Test schema `make test-schema`
+- Generate pydantic classes `make gen-pydantic`
+- And more! 
+
+### Using `poetry` & `linkml` tools
+
+Under the hood, the Makefile is basically running python and using the `linkml` generator tools. So you can run the same commands directly if you choose. 
+
+- Run tests `poetry run python -m unittest discover`
+- Generate mermaid diagram of schema `gen-erdiagram -f mermaid src/bdfkb_schema/schema/bdfkb_schema.yaml > mermaid.md`
+- And more! 
+  
+### Using `uv`
+
+`uv` is a modern tool for python that aims to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more. Learn more here https://github.com/astral-sh/uv
+
+Some of team uses `uv`, so you might find `uv` bits scattered around this project. However, since the LinkML cookiecutter project still uses poetry, this project is not yet fully embracing `uv`. Install `uv` and then `uv tool install linkml` and explore at your own risk.
 
 ## Credits
 
