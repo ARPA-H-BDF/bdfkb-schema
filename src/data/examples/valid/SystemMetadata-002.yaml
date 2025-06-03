@@ -1,0 +1,173 @@
+
+version: "v2.1.0"
+
+tool:
+  name: "GenomicsToolkit"
+  repo_url: "https://github.com/bioinformatics/genomics-toolkit"
+  tool_homepage: "https://genomicstoolkit.org"
+  documentation_url: "https://docs.genomicstoolkit.org"
+  tool_type: "Library"
+  tool_notes: "Comprehensive Python library for genomic data analysis and visualization"
+
+domains:
+  - "genomics"
+  - "bioinformatics"
+  - "precision-medicine"
+
+llm:
+  usesLlm: false
+  bringOwnKey: false
+
+input:
+  - name: "Genomic Variant Data"
+    dataCategory: "omics-molecular"
+    dataClass: "tabular"
+    dataType: "genomics"
+    dataSubType: "variant-calls"
+    dataStandard:
+      - "GDC"
+      - "None"
+    format:
+      - "csv"
+      - "tsv"
+      - "json"
+    proprietary: false
+    source: "https://portal.gdc.cancer.gov/"
+  
+  - name: "Gene Expression Matrices"
+    dataCategory: "omics-molecular"
+    dataClass: "matrix"
+    dataType: "genomics"
+    dataSubType: "rna-seq"
+    dataStandard:
+      - "GDC"
+    format:
+      - "csv"
+      - "tsv"
+    proprietary: false
+  
+  - name: "Protein Interaction Networks"
+    dataCategory: "omics-molecular"
+    dataClass: "graph-or-network"
+    dataType: "proteomics"
+    dataStandard:
+      - "PDC"
+    format:
+      - "json"
+      - "various"
+    proprietary: false
+
+output:
+  - name: "Statistical Analysis Results"
+    dataCategory: "omics-molecular"
+    dataClass: "tabular"
+    dataType: "genomics"
+    dataStandard:
+      - "None"
+    format:
+      - "csv"
+      - "json"
+    proprietary: false
+  
+  - name: "Visualization Plots"
+    dataCategory: "omics-molecular"
+    dataClass: "image"
+    dataType: "genomics"
+    dataStandard:
+      - "None"
+    format:
+      - "images"
+      - "pdf"
+    proprietary: false
+  
+  - name: "Interactive Dashboards"
+    dataCategory: "omics-molecular"
+    dataClass: "data-viz"
+    dataType: "genomics"
+    dataStandard:
+      - "None"
+    format:
+      - "various"
+    proprietary: false
+
+collaborations:
+  - name: "Cancer Genomics Integration"
+    description: "Integration with major cancer genomics databases"
+    tools:
+      - "TCGA"
+      - "cBioPortal"
+      - "COSMIC"
+    collaboration_purpose: "Comprehensive cancer genomics analysis pipeline"
+  
+  - name: "Visualization Ecosystem"
+    description: "Compatibility with popular visualization tools"
+    tools:
+      - "Plotly"
+      - "Seaborn"
+      - "Matplotlib"
+    collaboration_purpose: "Enhanced data visualization capabilities"
+
+maturity:
+  beginning_maturity: 2
+  current_maturity: 8
+  final_maturity: 9
+
+license:
+  license_type: "MIT"
+  link: "https://github.com/bioinformatics/genomics-toolkit/blob/main/LICENSE"
+  notes: "Permissive open source license for academic and commercial use"
+
+publication:
+  - type: "software-paper"
+    tool_version: "v2.0.0"
+    doi: "10.1093/bioinformatics/btaa123"
+    pmid: "32123456"
+    pmcid: "PMC7654321"
+
+credit:
+  - name: "Dr. Elena Rodriguez"
+    email:
+      - "elena.rodriguez@university.edu"
+      - "e.rodriguez@bioinstitute.org"
+    url: "https://bioinstitute.org/people/elena-rodriguez"
+    orcidid: "ORCID:0000-0003-9876-5432"
+    role: "Developer"
+    org: "Bioinformatics Institute"
+    note: "Principal investigator and lead developer"
+  
+  - name: "Alex Kim"
+    email:
+      - "alex.kim@university.edu"
+    role: "Contributor"
+    org: "University Genomics Department"
+    note: "Algorithm development and optimization"
+  
+  - name: "Dr. James Wilson"
+    url: "https://genomicslab.university.edu/wilson"
+    orcidid: "ORCID:0000-0001-2345-6789"
+    role: "PrimaryContact"
+    org: "University Genomics Lab"
+    note: "Project coordinator and user support"
+
+target_users:
+  primary_user:
+    user_type: "researcher"
+    technical_literacy_level:
+      - "advanced"
+      - "expert"
+    biomedical_literacy_level:
+      - "intermediate"
+      - "advanced"
+  
+  secondary_user:
+    user_type: "bioinformatician"
+    technical_literacy_level:
+      - "expert"
+    biomedical_literacy_level:
+      - "advanced"
+      - "expert"
+
+media:
+  - link: "https://genomicstoolkit.org/gallery"
+  - link: "https://github.com/bioinformatics/genomics-toolkit/wiki/Tutorials"
+  - link: "https://youtube.com/watch?v=genomics-toolkit-demo"

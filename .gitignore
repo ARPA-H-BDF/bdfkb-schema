@@ -2,6 +2,7 @@
 /project/docs/
 /tmp/
 **/.DS_Store
+project
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

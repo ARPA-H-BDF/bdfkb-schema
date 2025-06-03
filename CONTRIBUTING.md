@@ -9,14 +9,17 @@ in a pull request.
 
 ## Table Of Contents
 
-* [Code of Conduct](#code-of-conduct)
-* [Guidelines for Contributions and Requests](#contributions)
-  * [Reporting issues and making requests](#reporting-issues)
-  * [Questions and Discussion](#questions-and-discussion)
-  * [Adding new elements yourself](#adding-elements)
-* [Best Practices](#best-practices)
-  * [How to write a great issue](#great-issues)
-  * [How to create a great pull/merge request](#great-pulls)
+- [Contributing to bdfkb-schema](#contributing-to-bdfkb-schema)
+  - [Table Of Contents](#table-of-contents)
+  - [Code of Conduct](#code-of-conduct)
+  - [Guidelines for Contributions and Requests](#guidelines-for-contributions-and-requests)
+    - [Reporting problems and suggesting changes to with the data model](#reporting-problems-and-suggesting-changes-to-with-the-data-model)
+    - [Questions and Discussions](#questions-and-discussions)
+    - [Adding new elements yourself](#adding-new-elements-yourself)
+  - [Best Practices](#best-practices)
+    - [GitHub Best Practice](#github-best-practice)
+    - [Understanding LinkML](#understanding-linkml)
+    - [Modeling Best Practice](#modeling-best-practice)
 
 <a id="code-of-conduct"></a>
 
@@ -102,7 +105,7 @@ Core developers should read the material on the [LinkML site](https://linkml.io/
 - Include examples and counter-examples (intentionally invalid examples)
     - Rationale: these serve as documentation and unit tests
     - These will be used by the automated test suite
-    - All elements of the nmdc-schema must be illustrated with valid and invalid data examples in src/data. New schema elements will not be merged into the main branch until examples are provided
+    - All elements of the bdfkb-schema must be illustrated with valid and invalid data examples in src/data. New schema elements will not be merged into the main branch until examples are provided
     - Invalid example data files should be invalid for one single reason, which should be reflected in the filename. It should be possible to render the invalid example files valid by addressing that single fault.
 - Use enums for categorical values
     - Rationale: Open-ended string ranges encourage multiple values to represent the same entity, like “water”, “H2O” and “HOH”

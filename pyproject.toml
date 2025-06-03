@@ -2,7 +2,11 @@
 name = "bdfkb_schema"
 version = "0.1.0"
 description = "Schema to describe BDF Toolbox entities and the relationships between them."
-authors = ["James Eddy <james.a.eddy@gmail.com>"]
+authors = [
+    "James Eddy <james.a.eddy@gmail.com>",
+    "Matt Miller <mmiller@cra.com>",
+    "Nick Alico <nalico@cra.com>",
+]
 license = "Apache Software License 2.0"
 readme = "README.md"
 include = ["README.md", "src/bdfkb_schema/schema", "project"]
@@ -11,7 +15,11 @@ include = ["README.md", "src/bdfkb_schema/schema", "project"]
 name = "bdfkb_schema"
 version = "0.1.0"
 description = "Schema to describe BDF Toolbox entities and the relationships between them."
-authors = [{ name = "James Eddy", email = "james.a.eddy@gmail.com>" }]
+authors = [
+    { name = "James Eddy", email = "james.a.eddy@gmail.com" },
+    { name = "Matt Miller", email = "mmiller@cra.com" },
+    { name = "Nick Alico", email = "nalico@cra.com" },
+]
 license = "Apache Software License 2.0"
 readme = "README.md"
 requires-python = ">=3.9"
