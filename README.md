@@ -36,7 +36,7 @@ Use the `make` command to generate project artefacts:
 
 Create virtual env and install dependencies:
 
-`poetry install`
+* `poetry install`
 
 </details>
 
