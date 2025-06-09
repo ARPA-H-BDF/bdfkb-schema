@@ -303,6 +303,10 @@ classes:
         description: Public repository URL
         range: url
         required: true
+      package_url:
+        description: URL or identifier of the package source
+        range: url
+        required: false
       tool_homepage:
         description: Public homepage URL
         range: url
