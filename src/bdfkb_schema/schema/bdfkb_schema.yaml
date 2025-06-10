@@ -47,6 +47,11 @@ types:
     base: str
     pattern: '^https?://.*$'
     description: A valid HTTP or HTTPS URL
+  package_link:
+    uri: xsd:string
+    base: str
+    pattern: '^https?://(pypi\.org|npmjs\.com)/.+'
+    description: A valid package URL from known registries like PyPI or NPM. 
   SemanticVersion:
     uri: http://schema.org/
     base: string
@@ -305,7 +310,7 @@ classes:
         required: true
       package_url:
         description: URL or identifier of the package source
-        range: url
+        range: package_link
         required: false
       tool_homepage:
         description: Public homepage URL
