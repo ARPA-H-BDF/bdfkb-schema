@@ -1,11 +1,12 @@
 [tool.poetry]
 name = "bdfkb_schema"
-version = "0.1.0"
+version = "0.2.0"
 description = "Schema to describe BDF Toolbox entities and the relationships between them."
 authors = [
   "James Eddy <james.a.eddy@gmail.com>",
   "Matt Miller <mmiller@cra.com>",
-  "Nick Alico <nalico@cra.com>"
+  "Nick Alico <nalico@cra.com>",
+  "Isaac Chan <ichan@cra.com>"
 ]
 license = "Apache Software License 2.0"
 readme = "README.md"
