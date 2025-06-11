@@ -1,5 +1,10 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.3.1 (Isaac Chan, Nick Alico on 11 June-25)
+
+- Migrated added schema field from bdfkb-data to achieve parity post-migration
+- Migrate https://github.com/ARPA-H-BDF/bdfkb-data/pull/10 hotfix
+
 ## bdfkb_schema 0.3.0 (Nick Alico on 11 June-25)
 
 - Updated package manager setup details in readme

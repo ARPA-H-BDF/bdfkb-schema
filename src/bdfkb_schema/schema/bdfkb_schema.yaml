@@ -6,7 +6,7 @@ description: |-
   Current scope covers system metadata including LLM usage, cloud platform, 
   inputs, outputs, collaborations, and funding information.
 license: Apache Software License 2.0
-version: 0.1.0
+version: 0.3.1
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -136,7 +136,7 @@ classes:
         range: Collaboration
         multivalued: true
         required: true
-        minimum_value: 1
+        minimum_cardinality: 0
       funding:
         description: Information about funding sources
         range: FundingInfo
