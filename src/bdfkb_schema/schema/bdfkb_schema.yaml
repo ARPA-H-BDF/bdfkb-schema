@@ -6,7 +6,7 @@ description: |-
   Current scope covers system metadata including LLM usage, cloud platform, 
   inputs, outputs, collaborations, and funding information.
 license: Apache Software License 2.0
-version: 0.1.0
+version: 0.3.1
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -136,7 +136,7 @@ classes:
         range: Collaboration
         multivalued: true
         required: true
-        minimum_value: 1
+        minimum_cardinality: 0
       funding:
         description: Information about funding sources
         range: FundingInfo
@@ -168,6 +168,19 @@ classes:
         range: Media
         multivalued: true
         required: false
+      query_language:
+        description: REST-like interface usage
+        range: QueryLanguage
+        required: false
+      mcp:
+        description: Media Context Protocol usage
+        range: MCP
+        required: false
+      container:
+        description: Container usage
+        range: Containerized
+        required: false
+      
 
   LlmInfo:
     description: Information about LLM usage in the system
@@ -475,6 +488,42 @@ classes:
     attributes:
       link:
         range: string
+
+  QueryLanguage:
+    description: Query implementation within tool
+    attributes:
+      query_implementation: 
+        description: Use of a query language
+        range: boolean
+        required: false
+      query_type: 
+        description: The main query language type used
+        range: QueryType
+        required: false
+
+  MCP:
+    description: Media Context Protocol information
+    attributes:
+      public:
+        description: The server's publicity status
+        range: boolean
+        required: false
+      link:
+        description: Link to server/documentation
+        range: url
+        required: false
+
+  Containerized:
+    description: Containerization implementation
+    attributes:
+      containerized: 
+        description: Use of a container
+        range: boolean
+        required: false
+      container_type:
+        description: The container used
+        range: ContainerType
+        required: false
 
 
 
@@ -989,4 +1038,28 @@ enums:
       Notebook:
       AI/MLModel:
       KnowledgeGraph:
+  QueryType:
+    permissible_values:
+      REST:
+      GraphQL:
+      gRPC:
+      SOAP:
+      OData:
+      JSON-RPC:
+      XML-RPC:
+      Falcor:
+  ContainerType:
+    permissible_values:
+      Docker:
+      Podman:
+      containerd/nerdctl:
+      LXC:
+      runc:
+      Rancher Desktop:
+      Kubernetes:
+      Red Had OpenShift:
+      Hyper-V COntainers:
+      Buildah:
+      OrbStack:
+      PaaS:
 

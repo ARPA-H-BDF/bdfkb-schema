@@ -98,6 +98,14 @@ Under the hood, the Makefile is basically running python and using the `linkml` 
 
 Some of team uses `uv`, so you might find `uv` bits scattered around this project. However, since the LinkML cookiecutter project still uses poetry, this project is not yet fully embracing `uv`. Install `uv` and then `uv tool install linkml` and explore at your own risk.
 
+## Testing for Schema Developers
+### Testing via Remote URL
+In order to test a schema change on the existing dataset, one recommended approach is:
+1. Push your branch of changes from `bdfkb-schema` to GitHub
+2. Go online and copy the raw file url for `bdfkb-schema.yaml` on your feature branch
+3. Move to the `bdfkb-data` repository. In `main.py`, update the `SCHEMA_PATH` url to the url you just copied.
+4. Run the `main.py` file using whichever runtime you prefer (uv, poetry, conda)
+
 ## Credits
 
 This project was made with
