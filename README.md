@@ -22,7 +22,58 @@ Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and
 
 ## Developer Documentation
 
-More robust developer documentation is planned, see #14. In the meantime, here are some helpful commands: 
+### Quick-start setup:
+<details>
+Use the `make` command to generate project artefacts:
+
+* `make all`: make everything
+* `make deploy`: deploys site
+</details>
+
+<details>
+<summary>poetry setup (recommended)</summary>
+
+Create virtual env and install dependencies:
+
+* `poetry install`
+
+</details>
+
+<details>
+<summary>uv setup</summary>
+
+Installation:
+* `uv run main.py`
+  * This will install all dependencies & use required Python version
+* Install linkml tools (if not already installed): 
+  * `uv tool install linkml`
+
+</details>
+
+<details>
+<summary>conda setup</summary>
+
+1. Create conda venv:
+
+  - `conda create -n "venv" python=3.9`
+
+2. Activate venv:
+
+  - `conda activate venv`
+
+3. Install dependencies:
+
+  - `pip install .`
+
+</details>
+
+<details>
+<summary>ER Diagram Generation</summary>
+
+Create ER Diagram with Mermaid:
+* `gen-erdiagram ./src/bdfkb_schema/schema/sample_import_schema/custom-llm-tool.yaml > mermaid.md`
+
+</details>
 
 ### Using `make`
 
