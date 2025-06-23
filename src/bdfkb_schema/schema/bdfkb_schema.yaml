@@ -369,7 +369,7 @@ classes:
         range: boolean
         required: false
 
-  APIQuery:
+  APIRequest:
     attributes:
       request_type:
         description: Type of HTTP request
@@ -390,7 +390,7 @@ classes:
     attributes:
       api_request:
         description: List of info about a given API's requests
-        range: API
+        range: APIRequest
         multivalued: true
         required: false
 
