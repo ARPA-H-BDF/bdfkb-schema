@@ -358,7 +358,7 @@ classes:
         required: false
       parameter_type:
         description: Data type of the parameter
-        range: any
+        range: ParameterType
         required: false
       required:
         description: Is the parameter required
@@ -1117,3 +1117,11 @@ enums:
       PUT:
       PATCH:
       DELETE:
+  ParameterType:
+    permissible_values:
+      string:
+      integer:
+      number:
+      boolean:
+      object:
+      array:
