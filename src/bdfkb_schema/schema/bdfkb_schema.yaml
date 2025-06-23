@@ -385,7 +385,7 @@ classes:
     description: Info about the API
     attributes:
       api_request:
-        desciption: List of info about a given API's requests
+        description: List of info about a given API's requests
         range: API
         multivalued: true
         required: false
