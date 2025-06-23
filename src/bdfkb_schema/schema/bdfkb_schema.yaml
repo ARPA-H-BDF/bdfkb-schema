@@ -150,7 +150,7 @@ classes:
         range: License
         required: true
       api:
-        description: Information on a API tool's endpoints and parameters
+        description: Information on endpoints and parameters that a tool offers
         range: APIInfo
         required: false
       publication:
@@ -360,12 +360,16 @@ classes:
         description: Data type of the parameter
         range: ParameterType
         required: false
+      example:
+        description: An example value for this parameter
+        range: string
+        required: false
       required:
         description: Is the parameter required
         range: boolean
         required: false
 
-  API:
+  APIQuery:
     attributes:
       request_type:
         description: Type of HTTP request
