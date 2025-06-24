@@ -327,6 +327,7 @@ classes:
         required: true
       api_url:
         description: API URL
+        # Please ensure that there is no slash at the end of the url
         range: url
         required: false
       package_url:
@@ -377,6 +378,7 @@ classes:
         required: false
       endpoint:
         description: The endpoint URL
+        # Please ensure that there is a slash at the beginning of the endpoint
         range: string
         required: false
       parameters:
