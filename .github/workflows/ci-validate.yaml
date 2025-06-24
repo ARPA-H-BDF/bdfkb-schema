@@ -1,0 +1,35 @@
+
+name: Validate bdf.yaml
+
+on:
+    workflow_call: 
+        inputs:
+            python-version:
+                required: true
+                type: string
+                default: '3.9'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: ${{ inputs.python-version }}
+                
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install .
+                pip install linkml
+
+            - name: Validate yaml
+              run: |
+                python src/validation/validate.py
+
+            
