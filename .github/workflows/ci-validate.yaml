@@ -8,6 +8,10 @@ on:
                 required: true
                 type: string
                 default: '3.9'
+            validation-branch:
+                required: false
+                type: string
+                default: 'main'
 
 jobs:
     build:
@@ -15,10 +19,17 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
+
+            - name: Checkout source repository (where validate.py lives)
+              uses: actions/checkout@v4
+              with:
+                repository: ARPA-H-BDF/bdfkb-schema
+                ref: ${{ inputs.validation-branch }}
+                path: validation-source
 
             - name: Set up Python
-              uses: actions/setup-python@v2
+              uses: actions/setup-python@v4
               with:
                 python-version: ${{ inputs.python-version }}
                 
@@ -30,6 +41,6 @@ jobs:
 
             - name: Validate yaml
               run: |
-                python src/validation/validate.py
+                python ./validation-source/src/validation/validate.py
 
             
