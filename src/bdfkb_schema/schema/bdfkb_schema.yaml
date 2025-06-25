@@ -363,12 +363,11 @@ classes:
         required: false
       example:
         description: An example value for this parameter
-        any_of:
+        union_of:
         - range: string
         - range: integer
         - range: boolean
         - range: float
-        - range: JSON
         required: false
       required:
         description: Is the parameter required
