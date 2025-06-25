@@ -12,6 +12,10 @@ on:
                 required: false
                 type: string
                 default: 'main'
+            schema-url:
+              required: false
+              type: string
+              default: 'https://raw.githubusercontent.com/ARPA-H-BDF/bdfkb-schema/refs/heads/main/src/bdfkb_schema/schema/bdfkb_schema.yaml'
 
 jobs:
     build:
@@ -40,6 +44,6 @@ jobs:
 
             - name: Validate yaml
               run: |
-                python ./validation-source/src/validation/validate.py
+                python ./validation-source/src/validation/validate.py ${{inputs.schema-url}}
 
             

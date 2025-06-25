@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 
 from linkml.validator import validate_file
@@ -123,7 +124,11 @@ def validate_directory(directory_path, schema_path, target_class):
 # Example usage
 if __name__ == "__main__":
     DATA_DIRECTORY = "."
-    SCHEMA_PATH = "https://raw.githubusercontent.com/ARPA-H-BDF/bdfkb-schema/refs/heads/main/src/bdfkb_schema/schema/bdfkb_schema.yaml"
+    SCHEMA_PATH = (
+        sys.argv[1]
+        if sys.argv[1]
+        else "https://raw.githubusercontent.com/ARPA-H-BDF/bdfkb-schema/refs/heads/main/src/bdfkb_schema/schema/bdfkb_schema.yaml"
+    )
     TARGET_CLASS = "SystemMetadata"
 
     validate_directory(DATA_DIRECTORY, SCHEMA_PATH, TARGET_CLASS)
