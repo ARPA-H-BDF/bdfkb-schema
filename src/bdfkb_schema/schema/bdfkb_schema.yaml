@@ -378,7 +378,7 @@ classes:
       endpoint:
         description: The endpoint URL
         # Please ensure that there is a slash at the beginning of the endpoint
-        range: ExampleValue
+        range: string
         required: false
       parameters:
         description: The parameters that the API takes in
