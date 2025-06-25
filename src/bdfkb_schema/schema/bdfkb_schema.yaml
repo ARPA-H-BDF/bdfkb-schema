@@ -360,10 +360,6 @@ classes:
         description: Name of the parameter
         range: string
         required: false
-      parameter_type:
-        description: Data type of the parameter
-        range: ParameterType
-        required: false
       example:
         description: An example value for this parameter
         range: Any
@@ -1126,11 +1122,3 @@ enums:
       PUT:
       PATCH:
       DELETE:
-  ParameterType:
-    permissible_values:
-      string:
-      integer:
-      number:
-      boolean:
-      object:
-      array:
