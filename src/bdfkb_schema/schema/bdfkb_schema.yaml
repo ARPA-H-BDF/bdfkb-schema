@@ -92,6 +92,12 @@ types:
     union_of:
       - range: DataType
       - range: string
+  ExampleValue:
+    union_of:
+      - string
+      - integer
+      - boolean
+      - float
 
 classes:
   SystemMetadata:
@@ -383,7 +389,7 @@ classes:
       endpoint:
         description: The endpoint URL
         # Please ensure that there is a slash at the beginning of the endpoint
-        range: string
+        range: ExampleValue
         required: false
       parameters:
         description: The parameters that the API takes in
