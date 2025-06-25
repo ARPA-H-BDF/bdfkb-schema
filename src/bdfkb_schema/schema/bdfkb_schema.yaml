@@ -351,6 +351,9 @@ classes:
         range: string
         required: false
   
+  Any:
+    class_uri: linkml:Any
+
   APIParameter:
     attributes:
       name:
@@ -363,7 +366,7 @@ classes:
         required: false
       example:
         description: An example value for this parameter
-        range: string
+        range: Any
         required: false
       required:
         description: Is the parameter required
