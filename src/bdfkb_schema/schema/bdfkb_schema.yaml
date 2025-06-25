@@ -362,7 +362,8 @@ classes:
         range: ParameterType
         required: false
       example:
-        slot_uri: example
+        description: An example value for this parameter
+        range: string
         required: false
       required:
         description: Is the parameter required
@@ -638,15 +639,6 @@ slots:
   link:
     description: Link to additional information
     range: uri
-    required: false
-
-  example:
-    description: An example value for this parameter
-    union_of:
-      - string
-      - integer
-      - boolean
-      - float
     required: false
 
 enums:
