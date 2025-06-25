@@ -92,12 +92,6 @@ types:
     union_of:
       - range: DataType
       - range: string
-  ExampleValue:
-    union_of:
-      - string
-      - integer
-      - boolean
-      - float
 
 classes:
   SystemMetadata:
@@ -368,12 +362,7 @@ classes:
         range: ParameterType
         required: false
       example:
-        description: An example value for this parameter
-        union_of:
-        - range: string
-        - range: integer
-        - range: boolean
-        - range: float
+        slot_uri: example
         required: false
       required:
         description: Is the parameter required
@@ -649,6 +638,15 @@ slots:
   link:
     description: Link to additional information
     range: uri
+    required: false
+
+  example:
+    description: An example value for this parameter
+    union_of:
+      - string
+      - integer
+      - boolean
+      - float
     required: false
 
 enums:
