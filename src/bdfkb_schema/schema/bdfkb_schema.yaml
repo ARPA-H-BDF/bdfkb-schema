@@ -656,6 +656,7 @@ enums:
       dicom: "dicom"
       images: "images"
       markdown: "markdown"
+      fastq: "fastq"
   DataCategory:
     permissible_values:
       clinical-phenotype:
