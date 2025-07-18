@@ -1,6 +1,6 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
-## bdfkb_schema 0.4.1 (Isaac Chan on 23 June-25)
+## bdfkb_schema 0.4.1 (Isaac Chan on 18 July-25)
 
 - Added new field for FileFormat enum
 
