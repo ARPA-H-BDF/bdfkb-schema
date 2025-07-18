@@ -717,6 +717,7 @@ enums:
       gemini-flash:
       llama:
       Meta-Llama-3.1-8B-Instruct:
+      together-ai:
   CloudProvider:
     permissible_values:
       aws:
