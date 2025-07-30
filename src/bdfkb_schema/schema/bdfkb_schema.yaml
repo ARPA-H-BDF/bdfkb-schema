@@ -718,6 +718,7 @@ enums:
       Meta-Llama-3.1-8B-Instruct:
       together-ai:
       amazon-nova:
+      gemma:
   CloudProvider:
     permissible_values:
       aws:
