@@ -1067,6 +1067,7 @@ enums:
       clinician:
       researcher:
       site-admin-prepping-ehr-extracts:
+      data-manager:
   LiteracyLevel:
     permissible_values:
       novice:

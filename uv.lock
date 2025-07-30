@@ -26,7 +26,7 @@ wheels = [
 
 [[package]]
 name = "bdfkb-schema"
-version = "0.0.0.post79.dev0+18b1113"
+version = "0.0.0.post81.dev0+c0342df"
 source = { editable = "." }
 dependencies = [
     { name = "linkml-runtime" },
