@@ -1,5 +1,9 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.4.3 (Nick Alico on 30 July-25)
+
+- Added Amazon Nova as a permissible field in LLMModel
+
 ## bdfkb_schema 0.4.2 (Isaac Chan on 18 July-25)
 
 - Added together.ai as a permissible field in LLMModel
