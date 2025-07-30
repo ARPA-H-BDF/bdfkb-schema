@@ -655,6 +655,7 @@ enums:
       markdown: "markdown"
       fastq: "fastq"
       jsonschema: "jsonschema"
+      sdrf: "sdrf"
   DataCategory:
     permissible_values:
       clinical-phenotype:
