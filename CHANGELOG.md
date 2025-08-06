@@ -1,5 +1,11 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.4.8 (Isaac Chan on 6 August-25)
+
+- Added avro file format
+- Added serialized data class
+- Added uc-ctds and llama-data-model-generator LLM
+
 ## bdfkb_schema 0.4.7 (Nick Alico on 30 July-25)
 
 - Added Gemma LLM
