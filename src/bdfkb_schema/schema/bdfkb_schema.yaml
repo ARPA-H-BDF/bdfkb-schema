@@ -719,6 +719,8 @@ enums:
       together-ai:
       amazon-nova:
       gemma:
+      uc-ctds:
+      llama-data-model-generator:
   CloudProvider:
     permissible_values:
       aws:
