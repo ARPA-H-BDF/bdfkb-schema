@@ -656,6 +656,7 @@ enums:
       fastq: "fastq"
       jsonschema: "jsonschema"
       sdrf: "sdrf"
+      avro: "avro"
   DataCategory:
     permissible_values:
       clinical-phenotype:
@@ -677,6 +678,7 @@ enums:
       text-and-hyperlinks:
       text:
       data-viz:
+      serialized:
   DataType:
     permissible_values:
       clinical-ehr:
