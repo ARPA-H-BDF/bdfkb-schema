@@ -105,7 +105,7 @@ classes:
       tool:
         description: Metadata details about the tool
         range: ToolInfo
-        required: True
+        required: true
       domains:
         description: Domains in which the application is leveraged
         range: string
@@ -149,6 +149,10 @@ classes:
         description: Licensing of tool
         range: License
         required: true
+      api:
+        description: Information on endpoints and parameters that a tool offers
+        range: APIInfo
+        required: false
       publication:
         description: Publications about the software
         range: PublicationDetail
@@ -320,6 +324,11 @@ classes:
         description: Public repository URL
         range: url
         required: true
+      api_url:
+        description: API URL
+        # Please ensure that there is no slash at the end of the url
+        range: url
+        required: false
       package_url:
         description: URL or identifier of the package source
         range: package_link
@@ -339,6 +348,50 @@ classes:
       tool_notes:
         description: Top level notes
         range: string
+        required: false
+
+  Any:
+    class_uri: linkml:Any
+
+  APIParameter:
+    attributes:
+      name:
+        description: Name of the parameter
+        range: string
+        required: false
+      example:
+        description: An example value for this parameter
+        range: Any
+        required: false
+      required:
+        description: Is the parameter required
+        range: boolean
+        required: false
+
+  APIRequest:
+    attributes:
+      request_type:
+        description: Type of HTTP request
+        range: HTTPType
+        required: false
+      endpoint:
+        description: The endpoint URL
+        # Please ensure that there is a slash at the beginning of the endpoint
+        range: string
+        required: false
+      parameters:
+        description: The parameters that the API takes in
+        range: APIParameter
+        multivalued: true
+        required: false
+
+  APIInfo:
+    description: Info about the API
+    attributes:
+      api_request:
+        description: List of info about a given API's requests
+        range: APIRequest
+        multivalued: true
         required: false
 
   PublicationDetail:
@@ -600,6 +653,10 @@ enums:
       dicom: "dicom"
       images: "images"
       markdown: "markdown"
+      fastq: "fastq"
+      jsonschema: "jsonschema"
+      sdrf: "sdrf"
+      avro: "avro"
   DataCategory:
     permissible_values:
       clinical-phenotype:
@@ -621,6 +678,7 @@ enums:
       text-and-hyperlinks:
       text:
       data-viz:
+      serialized:
   DataType:
     permissible_values:
       clinical-ehr:
@@ -660,6 +718,11 @@ enums:
       gemini-flash:
       llama:
       Meta-Llama-3.1-8B-Instruct:
+      together-ai:
+      amazon-nova:
+      gemma:
+      uc-ctds:
+      llama-data-model-generator:
   CloudProvider:
     permissible_values:
       aws:
@@ -1010,6 +1073,7 @@ enums:
       clinician:
       researcher:
       site-admin-prepping-ehr-extracts:
+      data-manager:
   LiteracyLevel:
     permissible_values:
       novice:
@@ -1059,3 +1123,10 @@ enums:
       Buildah:
       OrbStack:
       PaaS:
+  HTTPType:
+    permissible_values:
+      GET:
+      POST:
+      PUT:
+      PATCH:
+      DELETE:
