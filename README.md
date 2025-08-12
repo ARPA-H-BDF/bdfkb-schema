@@ -19,6 +19,26 @@ Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and
 * [docs/](docs/) - Auto generated Markdown using `GenDoc` and files in `project/docs`
 * [wip/](wip/) - Work in progress, including sub-schemas
 
+## Add Validation to your Existing GitHub Actions CI
+`bdfkb-schema` provides a CI stage for you to intgrate into your existing CI process, ensuring your tool is always up to date with the latest schema requirements.
+
+To consume, add the following job to your GitHub CI Actions:
+```yaml
+validate-tool:
+  uses: ARPA-H-BDF/bdfkb-schema/.github/workflows/ci-validate.yaml@main
+  with:
+    python-version: '<YOUR PYTHON VERSION HERE (as a string)>'
+```
+
+### Parameters:
+| Property | Description | Required? | Default |
+|----------|----------|----------| --------|
+| python-version  | Minimum Python version supported by your application  | True | '3.9' |
+| validation-branch  | Branch of `bdfkb-data` that you wish to compare against | False | 'main' |
+| schema-url | URL of `bdfkb-schema` file you wish to compare against | False | 'https://raw.githubusercontent.com/ARPA-H-BDF/bdfkb-schema/refs/heads/main/src/bdfkb_schema/schema/bdfkb_schema.yaml' |
+
+> [!NOTE]
+> Currently, only GitHub Actions are supportd. If you would like to use this in GitLab or another repository platform, feel free to create an MR or create an issue!
 
 ## Developer Documentation
 
