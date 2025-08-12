@@ -1074,6 +1074,7 @@ enums:
       researcher:
       site-admin-prepping-ehr-extracts:
       data-manager:
+      data-curator:
   LiteracyLevel:
     permissible_values:
       novice:
