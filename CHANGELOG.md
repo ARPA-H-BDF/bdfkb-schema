@@ -1,6 +1,6 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
-## bdfkb_schema 0.3.2 (Nick Alico on 12 August-25)
+## bdfkb_schema 0.4.9 (Nick Alico on 12 August-25)
 
 - Added yaml validation CI stage
 
