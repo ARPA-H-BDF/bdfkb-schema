@@ -6,7 +6,7 @@ description: |-
   Current scope covers system metadata including LLM usage, cloud platform, 
   inputs, outputs, collaborations, and funding information.
 license: Apache Software License 2.0
-version: 0.3.1
+version: 0.3.2
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -45,13 +45,13 @@ types:
   url:
     uri: xsd:string
     base: str
-    pattern: '^https?://.*$'
+    pattern: "^https?://.*$"
     description: A valid HTTP or HTTPS URL
   package_link:
     uri: xsd:string
     base: str
     pattern: '^https?://(pypi\.org|npmjs\.com)/.+'
-    description: A valid package URL from known registries like PyPI or NPM. 
+    description: A valid package URL from known registries like PyPI or NPM.
   SemanticVersion:
     uri: http://schema.org/
     base: string
@@ -180,7 +180,6 @@ classes:
         description: Container usage
         range: Containerized
         required: false
-      
 
   LlmInfo:
     description: Information about LLM usage in the system
@@ -404,7 +403,7 @@ classes:
         required: false
       orcidid:
         description: ORCID ID of creditee
-        pattern: ^ORCID:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$  # ORCID pattern
+        pattern: ^ORCID:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$ # ORCID pattern
         slot_uri: schema:identifier
         required: false
       role:
@@ -456,7 +455,7 @@ classes:
         range: LiteracyLevel
         required: true
         multivalued: true
-  
+
   SecondaryUser:
     description: Secondary user of tool
     attributes:
@@ -492,11 +491,11 @@ classes:
   QueryLanguage:
     description: Query implementation within tool
     attributes:
-      query_implementation: 
+      query_implementation:
         description: Use of a query language
         range: boolean
         required: false
-      query_type: 
+      query_type:
         description: The main query language type used
         range: QueryType
         required: false
@@ -516,7 +515,7 @@ classes:
   Containerized:
     description: Containerization implementation
     attributes:
-      containerized: 
+      containerized:
         description: Use of a container
         range: boolean
         required: false
@@ -525,63 +524,61 @@ classes:
         range: ContainerType
         required: false
 
-
-
 slots:
   version:
     description: Version of the system
     range: string
     required: true
-  
+
   usesLlm:
     description: Whether the system uses LLMs
     range: boolean
     required: true
-  
+
   platform:
     description: Cloud platform used by the system
     range: string
     required: false
-  
+
   lastAuditDate:
     description: Date of the last security audit
     range: datetime
     required: true
-  
+
   name:
     description: Name of an entity
     range: string
-  
+
   format:
     description: Format of data
     range: string
-  
+
   proprietary:
     description: Whether something is proprietary
     range: boolean
-  
+
   source:
     description: Source of data or funding
     range: string
-  
+
   description:
     description: Description of an entity
     range: string
-  
+
   tools:
     description: List of tools
     range: string
     multivalued: true
-  
+
   collaboration_purpose:
     description: Purpose of a collaboration
     range: string
-  
+
   agreement:
     description: Agreement identifier
     range: string
     required: false
-  
+
   link:
     description: Link to additional information
     range: uri
@@ -1062,4 +1059,3 @@ enums:
       Buildah:
       OrbStack:
       PaaS:
-
