@@ -37,8 +37,7 @@ validate-tool:
 | validation-branch  | Branch of `bdfkb-data` that you wish to compare against | False | 'main' |
 | schema-url | URL of `bdfkb-schema` file you wish to compare against | False | 'https://raw.githubusercontent.com/ARPA-H-BDF/bdfkb-schema/refs/heads/main/src/bdfkb_schema/schema/bdfkb_schema.yaml' |
 
-> [!info]
->
+> [!NOTE]
 > Currently, only GitHub Actions are supportd. If you would like to use this in GitLab or another repository platform, feel free to create an MR or create an issue!
 
 ## Developer Documentation
