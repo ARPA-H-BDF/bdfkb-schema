@@ -30,7 +30,7 @@ validate-tool:
     python-version: '<YOUR PYTHON VERSION HERE (as a string)>'
 ```
 
-## Parameters:
+### Parameters:
 | Property | Description | Required? | Default |
 |----------|----------|----------| --------|
 | python-version  | Minimum Python version supported by your application  | True | '3.9' |
