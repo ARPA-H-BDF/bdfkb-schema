@@ -184,6 +184,12 @@ classes:
         description: Container usage
         range: Containerized
         required: false
+      dataCatalog:
+        description: Collection of datasets
+        range: DataCatalog
+        required: false
+        inlined: true
+        inlined_as_list: true
 
   LlmInfo:
     description: Information about LLM usage in the system
@@ -576,6 +582,41 @@ classes:
         description: The container used
         range: ContainerType
         required: false
+
+  DataCatalog:
+    class_uri: schema:DataCatalog
+    description: A collection of datasets
+    attributes:
+      name:
+        range: string
+        description: Name of the catalog
+
+      description:
+        range: string
+        description: Description of the catalog
+
+      dataset:
+        multivalued: true
+        range: Dataset
+        description: Datasets contained in the catalog
+        inlined: true # Embeds Dataset objects inline
+        inlined_as_list: true # Multiple datasets as a list
+
+  Dataset:
+    class_uri: schema:Dataset
+    description: A dataset
+    attributes:
+      name:
+        range: string
+        description: Name of the dataset
+
+      description:
+        range: string
+        description: Description of the dataset
+
+      url:
+        range: uri
+        description: URL to access the dataset
 
 slots:
   version:
@@ -1100,6 +1141,7 @@ enums:
       Notebook:
       AI/MLModel:
       KnowledgeGraph:
+      DataCatalog:
   QueryType:
     permissible_values:
       REST:

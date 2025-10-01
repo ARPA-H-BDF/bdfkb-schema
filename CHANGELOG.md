@@ -1,5 +1,9 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.5.1 (Nick Alico on 01 October-25)
+
+- Added data-curator as permissible UserType
+
 ## bdfkb_schema 0.5.0 (Isaac Chan on 12 August-25)
 
 - Added data-curator as permissible UserType
