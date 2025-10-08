@@ -1,5 +1,9 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.5.3 (Nick Alico on 08 October-25)
+
+- Add Google Vertex AI as llm model
+
 ## bdfkb_schema 0.5.2 (Nick Alico on 08 October-25)
 
 - Enum updates for Stanford tools
