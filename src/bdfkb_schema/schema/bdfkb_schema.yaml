@@ -698,6 +698,11 @@ enums:
       jsonschema: "jsonschema"
       sdrf: "sdrf"
       avro: "avro"
+      matrixarray: "matrixarray"
+      svs: "svs"
+      xml: "xml"
+      multimodal: "multimodal"
+      tiff: "tiff"
   DataCategory:
     permissible_values:
       clinical-phenotype:
@@ -737,6 +742,7 @@ enums:
       Synapse:
       None:
       JSONSchema:
+      TIFF:
   LLMRequirementReason:
     permissible_values:
       performance:
@@ -749,6 +755,7 @@ enums:
       gpt4:
       gpt4o:
       gpt4o-mini:
+      gpt4.1:
       claude3-5sonnet:
       claude3-7:
       openai:
@@ -764,6 +771,8 @@ enums:
       gemma:
       uc-ctds:
       llama-data-model-generator:
+      sora:
+      sora2:
   CloudProvider:
     permissible_values:
       aws:
