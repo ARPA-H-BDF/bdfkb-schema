@@ -4,4 +4,4 @@ try:
     __version__ = version(__name__)
 except PackageNotFoundError:
     # package not installed
-    __version__ = "0.5.2"
+    __version__ = "0.5.3"
