@@ -1153,6 +1153,7 @@ enums:
       AI/MLModel:
       KnowledgeGraph:
       DataCatalog:
+      Documentation:
   QueryType:
     permissible_values:
       REST:
