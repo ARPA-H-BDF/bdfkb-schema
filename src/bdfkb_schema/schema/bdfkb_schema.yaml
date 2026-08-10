@@ -97,24 +97,57 @@ classes:
   SystemMetadata:
     description: Top level class representing system metadata
     tree_root: true
+    rules:
+      - title: "standard-mode-requirements"
+        description: >-
+          When monorepo is absent (no packages listed), all standard fields are required.
+          When monorepo has at least one entry, all other fields are optional.
+        preconditions:
+          slot_conditions:
+            monorepo:
+              value_presence: ABSENT
+        postconditions:
+          slot_conditions:
+            version:
+              value_presence: PRESENT
+            tool:
+              value_presence: PRESENT
+            domains:
+              value_presence: PRESENT
+            llm:
+              value_presence: PRESENT
+            input:
+              minimum_cardinality: 1
+            output:
+              minimum_cardinality: 1
+            collaborations:
+              value_presence: PRESENT
+            maturity:
+              value_presence: PRESENT
+            license:
+              value_presence: PRESENT
+            credit:
+              value_presence: PRESENT
+            target_users:
+              value_presence: PRESENT
     attributes:
       version:
         description: Version of the system
         range: SemanticVersion
-        required: true
+        required: false
       tool:
         description: Metadata details about the tool
         range: ToolInfo
-        required: true
+        required: false
       domains:
         description: Domains in which the application is leveraged
         range: string
-        required: true
+        required: false
         multivalued: true
       llm:
         description: Information about LLM usage in the system
         range: LlmInfo
-        required: true
+        required: false
       cloud:
         description: Information about cloud platform usage
         range: CloudInfo
@@ -123,19 +156,19 @@ classes:
         description: List of input data sources
         range: DataSource
         multivalued: true
-        required: true
+        required: false
         minimum_value: 1
       output:
         description: List of output data formats
         range: DataSource
         multivalued: true
-        required: true
+        required: false
         minimum_value: 1
       collaborations:
         description: List of tool collaborations
         range: Collaboration
         multivalued: true
-        required: true
+        required: false
         minimum_cardinality: 0
       funding:
         description: Information about funding sources
@@ -144,11 +177,11 @@ classes:
       maturity:
         description: Tool maturity level
         range: MaturityLevel
-        required: true
+        required: false
       license:
         description: Licensing of tool
         range: License
-        required: true
+        required: false
       api:
         description: Information on endpoints and parameters that a tool offers
         range: APIInfo
@@ -162,11 +195,11 @@ classes:
         description: Credit for tool
         range: Credit
         multivalued: true
-        required: true
+        required: false
       target_users:
         description: Target primary and secondary users of tool
         range: TargetUsers
-        required: true
+        required: false
       media:
         description: Multi-media link pertaining to a tool (images, video, etc)
         range: Media
