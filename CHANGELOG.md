@@ -1,5 +1,12 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
+## bdfkb_schema 0.5.4 (Nick Alico on 08 October-25)
+
+- Add monorepo demarcation support
+    - If `monorepo` attribute listed with at least 1 package listed, root bdf.yaml passes as listed packages will be evaled as tools instead.
+    - If `monorepo` not listed, or listed but there are no entries, then all expected attributes remain required.
+- Fix CI action versions for updated runtimes (Node v24+)
+
 ## bdfkb_schema 0.5.3 (Nick Alico on 08 October-25)
 
 - Add Google Vertex AI as llm model

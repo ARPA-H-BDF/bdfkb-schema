@@ -1,0 +1,6 @@
+version: "v1.2.3"
+
+monorepo:
+  - name: "Mono tool 1"
+    path: "packages/mono_tool_1"
+    tool_type: "WebApp"

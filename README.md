@@ -1,5 +1,7 @@
 # bdfkb-schema
 
+[![version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FARPA-H-BDF%2Fbdfkb-schema%2Fmain%2Fpyproject.toml&query=%24.project.version&label=version)](https://github.com/ARPA-H-BDF/bdfkb-schema)
+
 Schema to describe content of the BDF Knowledgebase (BDFKB), including tools and related entities as well as the relationships between them.
 
 ## Website
