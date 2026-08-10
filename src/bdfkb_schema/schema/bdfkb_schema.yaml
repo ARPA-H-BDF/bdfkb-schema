@@ -190,6 +190,12 @@ classes:
         required: false
         inlined: true
         inlined_as_list: true
+      monorepo:
+        description: Is the primary repo a monorepo containing independently-usable packages?
+        range: MonorepoInfo
+        required: false
+        multivalued: true
+
 
   LlmInfo:
     description: Information about LLM usage in the system
@@ -617,6 +623,20 @@ classes:
       url:
         range: uri
         description: URL to access the dataset
+
+  MonorepoInfo:
+    description: List of packages contained within a monorepo
+    attributes:
+      name:
+        range: string
+        description: Name of monorepo package
+      path:
+        range: string
+        description: Local path to package (ex. packages/tool_name)
+      tool_type:
+        range: ToolType
+        description: Tool type of package/service within the monorepo
+
 
 slots:
   version:
