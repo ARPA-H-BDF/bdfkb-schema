@@ -1,6 +1,11 @@
 This covers the changes made to bdfkb_schema starting in version 0.1.0, with the most recent version at the top.
 
-## bdfkb_schema 0.5.4 (Nick Alico on 08 October-25)
+## bdfkb_schema 0.5.5 (Nick Alico on 25 Aug-26)
+- Add optional `linked_resources` attribute
+    - Allows listing of assoicated repos that are not standalong tools, but instead serve as associated repos that contribute to the primary tool.
+    - Allows ENHANCE V&V to perform a scopes sanity check on linked_resource repos, surfacing results in the scorecard for best practices and general awareness.
+
+## bdfkb_schema 0.5.4 (Nick Alico on 20 Aug-26)
 
 - Add monorepo demarcation support
     - If `monorepo` attribute listed with at least 1 package listed, root bdf.yaml passes as listed packages will be evaled as tools instead.
