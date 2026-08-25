@@ -228,6 +228,11 @@ classes:
         range: MonorepoInfo
         required: false
         multivalued: true
+      linked_resources:
+        description: Repositories which are in support of/relevant to a tool, but are not themselves designed as a standalone, open-source tool
+        range: LinkedResource
+        required: false
+        multivalued: true
 
 
   LlmInfo:
@@ -670,6 +675,12 @@ classes:
         range: ToolType
         description: Tool type of package/service within the monorepo
 
+  LinkedResource:
+    description: List of repo strings that act as resources related to and/or in support of the main tool
+    attributes:
+      repo_url: 
+        range: string
+        description: Repo url (GitHub, future planned support for GitLab, HuggingFace, etc.)
 
 slots:
   version:
