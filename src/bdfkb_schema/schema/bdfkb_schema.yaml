@@ -130,6 +130,8 @@ classes:
               value_presence: PRESENT
             target_users:
               value_presence: PRESENT
+            ai_metadata:
+              value_presence: PRESENT
     attributes:
       version:
         description: Version of the system
@@ -147,6 +149,10 @@ classes:
       llm:
         description: Information about LLM usage in the system
         range: LlmInfo
+        required: false
+      ai_metadata:
+        description: AI Metadata content for verification, validation, and provenance
+        range: AIComponentList
         required: false
       cloud:
         description: Information about cloud platform usage
@@ -264,6 +270,36 @@ classes:
         description: Do users need to bring their own API key?
         range: boolean
         required: true
+
+  AIComponentList:
+    description: List of AI components leveraged within the tool
+    attributes:
+      ai_component_list:
+        description: List of AI components of the application
+        range: AIMetadata
+        multivalued: true
+        required: false 
+
+  AIMetadata:
+    description: Resources and links crucial to application, component, and service metadata
+    attributes:
+      type:
+        description: AI component type
+        range: AIComponentType
+        required: false
+      modelCard:
+        # Broad example: https://mc.chai.org/v0.1/examples/Aidoc_ICH-02-RT.pdf
+        description: Model Card URL. Context=https://huggingface.co/docs/hub/model-cards
+        range: uri
+        required: false
+      dataCard:
+        description: Data Card URL. Context=https://sites.research.google/datacardsplaybook/
+        range: uri
+        required: false
+      workflowCardDirectory:
+        description: Workflow Card Directory URL. Template=https://github.com/data-cards/workflow-provenance-card/blob/main/templates/WORKFLOW_CARD_TEMPLATE.md
+        range: uri
+        required: false
 
   CloudInfo:
     description: Information about cloud platform usage
@@ -1249,3 +1285,11 @@ enums:
       PUT:
       PATCH:
       DELETE:
+  AIComponentType:
+    permissible_values:
+      heuristic:
+      statistical_model:
+      generative_ai_LLM:
+      agentic_composition:
+      hybrid:
+      other:
